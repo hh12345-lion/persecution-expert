@@ -23,10 +23,16 @@ export default function CountryExpertsPage() {
         subtitle="Persecution Expert provides the thematic persecution framework. Country-specific analysis is handled by specialist country expert witnesses across our network."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#374151] leading-relaxed">
+        <p className="mb-4 text-[#374151] leading-relaxed">
           persecutionexpert.com is the thematic umbrella site covering Refugee Convention grounds, state protection,
-          non-state actor persecution, and internal relocation methodology. For granular country conditions, instruct a
-          country expert from our network below alongside a persecution expert where needed.
+          non-state actor persecution, and internal relocation methodology for UK immigration tribunal proceedings.
+          For granular country conditions in FTT and Upper Tribunal cases, instruct a country expert from our network
+          below alongside a persecution expert where needed.
+        </p>
+        <p className="mb-8 text-[#374151] leading-relaxed">
+          This service and network are intended for United Kingdom asylum and immigration practitioners only. Country
+          expert sites linked below also serve UK tribunal instructions. We do not match experts for proceedings outside
+          England, Wales, Scotland, and Northern Ireland.
         </p>
 
         <div className="grid gap-6 sm:grid-cols-2">

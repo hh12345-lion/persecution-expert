@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "What Is a Persecution Expert Witness? | UK Immigration Tribunal Role",
@@ -24,6 +25,7 @@ export default function WhatIsAPersecutionExpertPage() {
         subtitle="The role, qualifications, and value of persecution expert evidence in UK asylum and immigration tribunal proceedings."
         breadcrumbs={crumbs}
       >
+        <p className="mb-4 text-[#374151] leading-relaxed">{SITE_UK_SCOPE}</p>
         <p className="mb-4 text-[#374151] leading-relaxed">
           A persecution expert witness provides independent analysis of persecution risk for UK immigration tribunals. Unlike
           country-specific expert witnesses who specialise in conditions within a single jurisdiction, persecution experts

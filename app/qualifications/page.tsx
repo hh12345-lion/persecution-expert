@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Persecution Expert Witness Qualifications UK",
@@ -21,6 +22,7 @@ export default function QualificationsPage() {
         subtitle="Core credentials, thematic vs country expertise, and expert duties in UK immigration tribunal proceedings."
         breadcrumbs={crumbs}
       >
+        <p className="mt-4 mb-4 text-[#374151] leading-relaxed">{SITE_UK_SCOPE}</p>
         <h2 className="text-2xl font-bold text-[#1A3A5C]">Core Credentials</h2>
         <p className="mt-4 mb-4 text-[#374151] leading-relaxed">
           Persecution expert witnesses hold academic expertise (PhD, MA in relevant disciplines including political science,

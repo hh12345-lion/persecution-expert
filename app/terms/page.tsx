@@ -1,6 +1,7 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Terms of Use | Persecution Expert",
@@ -17,7 +18,8 @@ export default function TermsPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell title="Terms of Use" breadcrumbs={crumbs}>
-        <p className="text-[#374151] leading-relaxed">
+        <p className="text-[#374151] leading-relaxed">{SITE_UK_SCOPE}</p>
+        <p className="mt-4 text-[#374151] leading-relaxed">
           Persecution Expert is an expert witness matching service for UK immigration solicitors. We are not a law firm
           and do not provide legal advice. Expert reports instructed through our service operate independently and owe
           their primary duty to the tribunal under Immigration Tribunal Practice Direction paragraph 10.

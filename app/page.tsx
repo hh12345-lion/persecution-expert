@@ -7,6 +7,7 @@ import { persecutionTypes } from "@/data/persecution-types";
 import { services } from "@/data/services";
 import { caseTypes } from "@/data/case-types";
 import { createMetadata } from "@/lib/metadata";
+import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Persecution Expert Witness UK | Asylum & Immigration Tribunal Reports",
@@ -29,9 +30,9 @@ export default function HomePage() {
           </h1>
           <p className="mt-6 max-w-2xl text-base text-white/80 sm:text-lg">
             Persecution Expert connects UK immigration solicitors, barristers, and Legal Aid practitioners with
-            qualified persecution expert witnesses for asylum appeals and immigration tribunal proceedings. Independent
-            analysis of Convention grounds, state protection, non-state actor persecution, and internal relocation across
-            all countries.
+            qualified persecution expert witnesses for asylum appeals and immigration tribunal proceedings in England,
+            Wales, Scotland, and Northern Ireland. Independent analysis of Convention grounds, state protection,
+            non-state actor persecution, and internal relocation for UK First-tier and Upper Tribunal cases.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
             <Link
@@ -47,6 +48,20 @@ export default function HomePage() {
               How to Instruct
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="py-12 sm:py-16">
+        <div className="mx-auto min-w-0 max-w-6xl px-4 sm:px-6 lg:px-8">
+          <h2 className="text-xl font-bold text-[#1A3A5C] sm:text-2xl md:text-3xl">United Kingdom service scope</h2>
+          <p className="mt-4 max-w-3xl text-[#374151] leading-relaxed">{SITE_UK_SCOPE}</p>
+          <p className="mt-4 max-w-3xl text-[#374151] leading-relaxed">
+            Expert reports address UK legal standards including the Qualification Directive as transposed into UK law,
+            leading UKSC authority such as HJ (Iran) [2010] and RT (Zimbabwe) [2012], Immigration Tribunal Practice
+            Direction paragraph 10, and the Adam Pipe expert report guide. Instructions relate to Home Office refusal
+            letters, FTT asylum appeals, Upper Tribunal country guidance cases, and related UK immigration proceedings.
+            Practitioners outside the United Kingdom should seek local expert witness services in their jurisdiction.
+          </p>
         </div>
       </section>
 

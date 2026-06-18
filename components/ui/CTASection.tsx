@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export function CTASection({
   title = "Instruct a Persecution Expert Witness",
-  description = "Submit your case details for a confidential response within one business day. Legal Aid compatible rates available for all persecution grounds.",
+  description = "Submit your UK immigration tribunal case details for a confidential response within one business day. Legal Aid compatible rates available for all persecution grounds.",
 }: {
   title?: string;
   description?: string;

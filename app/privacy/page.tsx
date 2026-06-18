@@ -24,7 +24,7 @@ export default function PrivacyPage() {
           respond to instruction requests and match appropriate experts.
         </p>
         <p className="mt-4 text-[#374151] leading-relaxed">
-          Contact form submissions are processed via Formspree and may trigger email notifications to our team. We retain
+          Contact form submissions are stored securely and may trigger email notifications to our team. We retain
           data only as long as necessary to fulfil your request. We do not sell personal data. You may request deletion
           by emailing {SITE_EMAIL}. We use cookies as described in our Cookie Policy. Non-essential tracking scripts load
           only after you grant consent.
