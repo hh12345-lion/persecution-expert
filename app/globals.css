@@ -1,31 +1,53 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-primary: #0C3547;
-  --color-accent: #2e7d52;
-  --color-highlight: #c8922a;
-  --color-section-alt: #f4f8f7;
-  --color-border: #c8ddd6;
-  --color-body: #374151;
-  --font-sans: var(--font-inter);
-  --radius-card: 8px;
-  --radius-sm: 4px;
-  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 16px rgba(0, 0, 0, 0.06);
+  --color-ink: #0c1218;
+  --color-ink-soft: #1a242e;
+  --color-ember: #d66a3a;
+  --color-ember-deep: #b85328;
+  --color-slate: #1f4a56;
+  --color-mist: #e4e9ef;
+  --color-panel: #f5f7f9;
+  --color-rule: #b7c3cf;
+  --color-body: #3a4550;
+  --color-primary: #0c1218;
+  --color-accent: #d66a3a;
+  --color-highlight: #d66a3a;
+  --color-section-alt: #e4e9ef;
+  --color-border: #b7c3cf;
+  --font-display: var(--font-fraunces);
+  --font-sans: var(--font-manrope);
+  --radius-card: 2px;
+  --radius-sm: 2px;
+  --shadow-card: 0 1px 0 rgba(12, 18, 24, 0.06);
   --breakpoint-xs: 375px;
 }
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
-  background: #ffffff;
-  color: #374151;
-  font-family: var(--font-inter), system-ui, sans-serif;
+  background-color: #f5f7f9;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 100% -10%, rgba(214, 106, 58, 0.07), transparent 50%),
+    linear-gradient(180deg, #eef1f5 0%, #f5f7f9 28%, #f5f7f9 100%);
+  color: #3a4550;
+  font-family: var(--font-manrope), system-ui, sans-serif;
   overflow-x: hidden;
   min-width: 320px;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
 }
 
 img,
@@ -40,10 +62,63 @@ a {
   word-break: break-word;
 }
 
-/* Prevent flex/grid children from forcing horizontal overflow */
 main,
 section {
   min-width: 0;
+}
+
+::selection {
+  background: rgba(214, 106, 58, 0.22);
+  color: #0c1218;
+}
+
+/* Index spine — numbered reading rhythm */
+.index-spine {
+  position: relative;
+}
+
+.index-spine::before {
+  content: "";
+  position: absolute;
+  left: 1.15rem;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: linear-gradient(180deg, #d66a3a, #b7c3cf 40%, transparent);
+}
+
+@media (min-width: 640px) {
+  .index-spine::before {
+    left: 1.35rem;
+  }
+}
+
+/* Ember underline link */
+.link-ember {
+  color: #d66a3a;
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 0 1px;
+  transition: background-size 0.2s ease;
+}
+
+.link-ember:hover {
+  background-size: 100% 1px;
+}
+
+/* Dossier panel (dropdown + forms) */
+.dossier-panel {
+  background: #0c1218;
+  color: #f5f7f9;
+  border: 1px solid rgba(183, 195, 207, 0.25);
+  box-shadow: 0 18px 40px rgba(12, 18, 24, 0.35);
+}
+
+.dossier-panel a:hover {
+  background: rgba(214, 106, 58, 0.12);
+  color: #f5f7f9;
 }
 
 @keyframes slideUp {
@@ -66,7 +141,21 @@ section {
   }
 }
 
-/* Mobile table scroll - edge-to-edge within section padding */
+@keyframes drawerIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-drawer {
+  animation: drawerIn 0.18s ease-out;
+}
+
 .table-scroll {
   margin-left: -1rem;
   margin-right: -1rem;
@@ -84,7 +173,6 @@ section {
   }
 }
 
-/* Mobile nav toggle icons (checkbox is sibling of .header-bar) */
 #mobile-nav-toggle:checked ~ .header-bar .icon-open {
   display: none;
 }
@@ -93,9 +181,8 @@ section {
   display: block;
 }
 
-/* Mobile nav: full-width panel scroll on small screens */
 #mobile-menu {
-  max-height: min(85vh, 32rem);
+  max-height: min(85vh, 36rem);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }

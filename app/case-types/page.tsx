@@ -23,7 +23,7 @@ export default function CaseTypesPage() {
         subtitle="Persecution expert witness evidence for all major UK immigration tribunal proceedings."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#374151] leading-relaxed">
+        <p className="mb-8 text-[#3a4550] leading-relaxed">
           Persecution Expert provides qualified expert reports for First-tier Tribunal appeals, Upper Tribunal country
           guidance cases, deportation and Article 3 claims, fresh claims, LGBTQ+ asylum, gender-based violence, political
           persecution, and religious persecution proceedings.
@@ -35,9 +35,9 @@ export default function CaseTypesPage() {
             href: `/case-types/${c.slug}`,
           }))}
         />
-        <p className="mt-8 text-[#374151]">
+        <p className="mt-8 text-[#3a4550]">
           See also our{" "}
-          <Link href="/persecution-types" className="font-semibold text-[#C8922A] hover:underline">
+          <Link href="/persecution-types" className="font-semibold text-[#d66a3a] hover:underline">
             persecution types hub
           </Link>{" "}
           for persecution ground-specific expert evidence pages.

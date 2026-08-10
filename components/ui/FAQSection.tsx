@@ -13,17 +13,14 @@ export function FAQSection({
 
   return (
     <section id={id} className="scroll-mt-24 py-12" aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`} className="mb-8 text-2xl font-bold text-[#1A3A5C]">
+      <h2 id={`${id}-heading`} className="mb-8 font-display text-2xl text-ink sm:text-3xl">
         {title}
       </h2>
-      <div className="space-y-6">
+      <div className="divide-y divide-rule border-y border-rule">
         {faqs.map((faq) => (
-          <div
-            key={faq.question}
-            className="rounded-[8px] border border-[#D0DCE8] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.06)]"
-          >
-            <h3 className="text-lg font-semibold text-[#1A3A5C]">{faq.question}</h3>
-            <p className="mt-3 text-[#374151] leading-relaxed">{faq.answer}</p>
+          <div key={faq.question} className="py-6">
+            <h3 className="font-display text-lg text-ink">{faq.question}</h3>
+            <p className="mt-3 leading-relaxed text-body">{faq.answer}</p>
           </div>
         ))}
       </div>

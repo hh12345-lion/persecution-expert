@@ -15,7 +15,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#1A3A5C",
+          backgroundColor: "#0c1218",
           padding: 80,
         }}
       >
@@ -36,7 +36,7 @@ export default function OpenGraphImage() {
             marginTop: 32,
             fontSize: 36,
             fontWeight: 600,
-            color: "#C8922A",
+            color: "#d66a3a",
             textAlign: "center",
             lineHeight: 1.3,
           }}

@@ -2,15 +2,24 @@ import Link from "next/link";
 
 export function CardGrid({ items }: { items: { title: string; description: string; href: string }[] }) {
   return (
-    <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
-      {items.map((item) => (
-        <Link key={item.href} href={item.href}
-          className="group min-h-[44px] min-w-0 break-words rounded-[8px] border border-[#D0DCE8] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08),0_4px_16px_rgba(0,0,0,0.06)] transition hover:border-[#1A3A5C]">
-          <h3 className="font-semibold text-[#1A3A5C] group-hover:text-[#C8922A]">{item.title}</h3>
-          <p className="mt-2 text-sm leading-relaxed text-[#374151]">{item.description}</p>
-          <span className="mt-4 inline-block text-sm font-medium text-[#C8922A]">Learn more →</span>
-        </Link>
+    <ul className="divide-y divide-rule border-y border-rule">
+      {items.map((item, i) => (
+        <li key={item.href}>
+          <Link
+            href={item.href}
+            className="group flex min-h-[44px] min-w-0 flex-col gap-2 break-words py-5 transition sm:flex-row sm:items-baseline sm:gap-6"
+          >
+            <span className="w-8 shrink-0 font-mono text-xs text-ember">{String(i + 1).padStart(2, "0")}</span>
+            <span className="font-display text-lg text-ink group-hover:text-ember sm:w-56 sm:shrink-0 lg:w-64">
+              {item.title}
+            </span>
+            <span className="flex-1 text-sm leading-relaxed text-body">{item.description}</span>
+            <span className="shrink-0 text-sm font-medium text-ember opacity-0 transition group-hover:opacity-100 sm:opacity-100">
+              →
+            </span>
+          </Link>
+        </li>
       ))}
-    </div>
+    </ul>
   );
 }

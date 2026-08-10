@@ -1,29 +1,39 @@
 import Link from "next/link";
 
 export function CTASection({
-  title = "Instruct a Persecution Expert Witness",
-  description = "Submit your UK immigration tribunal case details for a confidential response within one business day. Legal Aid compatible rates available for all persecution grounds.",
+  title = "Ready to instruct?",
+  description = "Send a short case note. We reply within one business day with expert fit, scope, and Legal Aid–compatible timing where relevant.",
 }: {
   title?: string;
   description?: string;
 }) {
   return (
-    <section className="bg-[#1A3A5C] py-12 sm:py-14 md:py-16">
-      <div className="mx-auto min-w-0 max-w-6xl px-4 text-center sm:px-6 lg:px-8">
-        <h2 className="text-xl font-bold text-white sm:text-2xl md:text-3xl">{title}</h2>
-        <p className="mx-auto mt-4 max-w-2xl text-sm text-white/90 sm:text-base">{description}</p>
-        <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+    <section className="relative overflow-hidden bg-slate py-14 sm:py-16">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-30"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 0% 100%, rgba(214,106,58,0.45), transparent 45%)",
+        }}
+        aria-hidden
+      />
+      <div className="relative mx-auto flex min-w-0 max-w-6xl flex-col gap-6 px-4 sm:flex-row sm:items-end sm:justify-between sm:px-6 lg:px-8">
+        <div className="max-w-xl">
+          <h2 className="font-display text-2xl text-white sm:text-3xl">{title}</h2>
+          <p className="mt-3 text-sm leading-relaxed text-white/70 sm:text-base">{description}</p>
+        </div>
+        <div className="flex flex-col gap-3 sm:flex-row sm:shrink-0">
           <Link
             href="/contact"
-            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[4px] bg-[#C8922A] px-6 py-3 font-semibold text-white transition hover:bg-[#b07f22] sm:w-auto sm:min-w-[200px] sm:px-8"
+            className="inline-flex min-h-[44px] items-center justify-center bg-ember px-6 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
           >
-            Contact Us
+            Instruct
           </Link>
           <Link
             href="/how-to-instruct"
-            className="inline-flex min-h-[44px] w-full items-center justify-center rounded-[4px] border-2 border-white px-6 py-3 font-semibold text-white transition hover:bg-white/10 sm:w-auto sm:min-w-[200px] sm:px-8"
+            className="inline-flex min-h-[44px] items-center justify-center border border-white/30 px-6 py-3 text-sm font-semibold text-white hover:border-ember hover:text-ember"
           >
-            How to Instruct
+            Instruction guide
           </Link>
         </div>
       </div>

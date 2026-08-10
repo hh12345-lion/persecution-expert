@@ -10,10 +10,14 @@ type NavDropdownProps = {
   href: string;
   items: NavDropdownItem[];
   scrollable?: boolean;
+  note?: string;
 };
 
-export function NavDropdown({ label, href, items, scrollable }: NavDropdownProps) {
+export function NavDropdown({ label, href, items, scrollable, note }: NavDropdownProps) {
   const [open, setOpen] = useState(false);
+  const mid = Math.ceil(items.length / 2);
+  const left = items.slice(0, mid);
+  const right = items.slice(mid);
 
   return (
     <div
@@ -29,13 +33,22 @@ export function NavDropdown({ label, href, items, scrollable }: NavDropdownProps
     >
       <Link
         href={href}
-        className={`inline-flex min-h-[44px] items-center gap-1 rounded-[4px] px-2 py-2 text-sm hover:bg-[#F5F8FC] hover:text-[#1A3A5C] ${open ? "bg-[#F5F8FC] text-[#1A3A5C]" : "text-[#374151]"}`}
+        className={`group inline-flex min-h-[44px] items-center gap-1.5 px-2.5 py-2 text-[13px] font-medium tracking-wide transition-colors ${
+          open ? "text-ember" : "text-ink/80 hover:text-ink"
+        }`}
         aria-expanded={open}
         aria-haspopup="true"
       >
-        {label}
+        <span className="relative">
+          {label}
+          <span
+            className={`absolute -bottom-0.5 left-0 h-px bg-ember transition-all duration-200 ${
+              open ? "w-full" : "w-0 group-hover:w-full"
+            }`}
+          />
+        </span>
         <svg
-          className={`h-4 w-4 opacity-60 transition-transform duration-150 ${open ? "rotate-180" : ""}`}
+          className={`h-3 w-3 opacity-50 transition-transform duration-200 ${open ? "rotate-180 text-ember" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -45,26 +58,58 @@ export function NavDropdown({ label, href, items, scrollable }: NavDropdownProps
         </svg>
       </Link>
 
-      {/* pt-2 bridge keeps dropdown open while moving pointer from trigger to menu */}
       <div
-        className={`absolute left-0 top-full z-[60] pt-2 ${scrollable ? "min-w-[280px]" : "min-w-[240px]"} ${open ? "pointer-events-auto visible opacity-100" : "pointer-events-none invisible opacity-0"} transition-opacity duration-150`}
+        className={`absolute left-1/2 top-full z-[60] w-[min(92vw,36rem)] -translate-x-1/2 pt-3 ${
+          open ? "pointer-events-auto visible" : "pointer-events-none invisible"
+        }`}
       >
-        <ul
-          className={`rounded-[4px] border border-[#D0DCE8] bg-white py-2 shadow-[0_4px_16px_rgba(0,0,0,0.1)] ${scrollable ? "max-h-[min(70vh,22rem)] overflow-y-auto" : ""}`}
+        <div
+          className={`dossier-panel animate-drawer overflow-hidden rounded-[2px] ${open ? "opacity-100" : "opacity-0"}`}
           role="menu"
         >
-          {items.map((item) => (
-            <li key={item.href} role="none">
+          <div className="flex items-stretch border-b border-white/10">
+            <div className="w-1.5 shrink-0 bg-ember" aria-hidden />
+            <div className="flex flex-1 items-center justify-between gap-4 px-4 py-3">
+              <div>
+                <p className="font-display text-sm text-white">{label}</p>
+                {note && <p className="mt-0.5 text-[11px] text-white/45">{note}</p>}
+              </div>
               <Link
-                href={item.href}
-                role="menuitem"
-                className="block px-4 py-2.5 text-sm text-[#374151] hover:bg-[#F5F8FC] hover:text-[#1A3A5C] focus:bg-[#F5F8FC] focus:text-[#1A3A5C] focus:outline-none"
+                href={href}
+                className="shrink-0 text-[11px] font-semibold uppercase tracking-[0.12em] text-ember hover:text-white"
               >
-                {item.label}
+                Open index
               </Link>
-            </li>
-          ))}
-        </ul>
+            </div>
+          </div>
+
+          <div
+            className={`grid gap-0 sm:grid-cols-2 ${scrollable ? "max-h-[min(60vh,20rem)] overflow-y-auto" : ""}`}
+          >
+            {[left, right].map((col, colIdx) => (
+              <ul
+                key={colIdx}
+                className={colIdx === 0 ? "sm:border-r sm:border-white/10" : ""}
+                role="none"
+              >
+                {col.map((item, i) => (
+                  <li key={item.href} role="none">
+                    <Link
+                      href={item.href}
+                      role="menuitem"
+                      className="flex items-baseline gap-3 px-4 py-2.5 text-sm text-white/75 transition-colors hover:bg-ember/15 hover:text-white focus:bg-ember/15 focus:text-white focus:outline-none"
+                    >
+                      <span className="w-5 shrink-0 font-mono text-[10px] text-ember/80">
+                        {String(colIdx * mid + i + 1).padStart(2, "0")}
+                      </span>
+                      <span>{item.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );

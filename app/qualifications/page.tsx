@@ -22,15 +22,15 @@ export default function QualificationsPage() {
         subtitle="Core credentials, thematic vs country expertise, and expert duties in UK immigration tribunal proceedings."
         breadcrumbs={crumbs}
       >
-        <p className="mt-4 mb-4 text-[#374151] leading-relaxed">{SITE_UK_SCOPE}</p>
-        <h2 className="text-2xl font-bold text-[#1A3A5C]">Core Credentials</h2>
-        <p className="mt-4 mb-4 text-[#374151] leading-relaxed">
+        <p className="mt-4 mb-4 text-[#3a4550] leading-relaxed">{SITE_UK_SCOPE}</p>
+        <h2 className="text-2xl font-bold text-[#0c1218]">Core Credentials</h2>
+        <p className="mt-4 mb-4 text-[#3a4550] leading-relaxed">
           Persecution expert witnesses hold academic expertise (PhD, MA in relevant disciplines including political science,
           law, sociology, human rights, and international relations), field research experience, and familiarity with UK
           asylum law and tribunal practice. Experts comply with Immigration Tribunal Practice Direction paragraph 10 (2023)
           and have prior tribunal acceptance records.
         </p>
-        <ul className="mb-4 list-disc space-y-2 pl-6 text-[#374151] leading-relaxed">
+        <ul className="mb-4 list-disc space-y-2 pl-6 text-[#3a4550] leading-relaxed">
           <li>Advanced academic qualification in a relevant discipline</li>
           <li>Demonstrable field research or professional experience</li>
           <li>Familiarity with Refugee Convention grounds and Qualification Directive</li>
@@ -39,30 +39,30 @@ export default function QualificationsPage() {
           <li>Prior tribunal acceptance and oral evidence experience where applicable</li>
         </ul>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#1A3A5C]">Thematic vs Country Expertise</h2>
-        <p className="mt-4 mb-4 text-[#374151] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#0c1218]">Thematic vs Country Expertise</h2>
+        <p className="mt-4 mb-4 text-[#3a4550] leading-relaxed">
           Persecution experts may have either thematic expertise (LGBTQ+ persecution across multiple countries) or
           country-specific expertise (single country in-depth knowledge). The choice depends on the specific claim profile.
         </p>
-        <p className="mb-4 text-[#374151] leading-relaxed">
+        <p className="mb-4 text-[#3a4550] leading-relaxed">
           For Convention ground analysis, state protection, and persecution methodology, a thematic persecution expert is
           typically instructed. For granular country conditions, a country expert may supplement the persecution expert
           report. Many complex claims benefit from both.
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#1A3A5C]">Expert Duties: Immigration Tribunal</h2>
-        <p className="mt-4 mb-4 text-[#374151] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#0c1218]">Expert Duties: Immigration Tribunal</h2>
+        <p className="mt-4 mb-4 text-[#3a4550] leading-relaxed">
           Expert witnesses in immigration proceedings owe their primary duty to the tribunal, not the instructing party.
           They must maintain independence and objectivity throughout the instruction process. Expert reports must contain a
           statement of truth and comply with the Adam Pipe Expert Reports guide (October 2025).
         </p>
-        <p className="text-[#374151] leading-relaxed">
+        <p className="text-[#3a4550] leading-relaxed">
           See our{" "}
-          <Link href="/how-reports-work" className="text-[#C8922A] hover:underline">
+          <Link href="/how-reports-work" className="text-[#d66a3a] hover:underline">
             how reports work
           </Link>{" "}
           page and{" "}
-          <Link href="/guides/expert-report-standards-guide" className="text-[#C8922A] hover:underline">
+          <Link href="/guides/expert-report-standards-guide" className="text-[#d66a3a] hover:underline">
             expert report standards guide
           </Link>{" "}
           for full details on report requirements.

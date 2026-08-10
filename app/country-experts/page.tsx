@@ -23,13 +23,13 @@ export default function CountryExpertsPage() {
         subtitle="Persecution Expert provides the thematic persecution framework. Country-specific analysis is handled by specialist country expert witnesses across our network."
         breadcrumbs={crumbs}
       >
-        <p className="mb-4 text-[#374151] leading-relaxed">
+        <p className="mb-4 text-[#3a4550] leading-relaxed">
           persecutionexpert.com is the thematic umbrella site covering Refugee Convention grounds, state protection,
           non-state actor persecution, and internal relocation methodology for UK immigration tribunal proceedings.
           For granular country conditions in FTT and Upper Tribunal cases, instruct a country expert from our network
           below alongside a persecution expert where needed.
         </p>
-        <p className="mb-8 text-[#374151] leading-relaxed">
+        <p className="mb-8 text-[#3a4550] leading-relaxed">
           This service and network are intended for United Kingdom asylum and immigration practitioners only. Country
           expert sites linked below also serve UK tribunal instructions. We do not match experts for proceedings outside
           England, Wales, Scotland, and Northern Ireland.
@@ -39,15 +39,15 @@ export default function CountryExpertsPage() {
           {networkSites.map((site) => (
             <article
               key={site.url}
-              className="flex min-w-0 flex-col rounded-[8px] border border-[#D0DCE8] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
+              className="flex min-w-0 flex-col rounded-[8px] border border-[#b7c3cf] bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.08)]"
             >
-              <h2 className="text-lg font-bold text-[#1A3A5C]">{site.name}</h2>
-              <p className="mt-3 flex-1 text-sm leading-relaxed text-[#374151]">{site.description}</p>
+              <h2 className="text-lg font-bold text-[#0c1218]">{site.name}</h2>
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-[#3a4550]">{site.description}</p>
               <a
                 href={site.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-4 inline-flex min-h-[44px] items-center text-sm font-semibold text-[#C8922A] hover:underline"
+                className="mt-4 inline-flex min-h-[44px] items-center text-sm font-semibold text-[#d66a3a] hover:underline"
               >
                 {site.anchorExamples[0]} →
               </a>
@@ -55,11 +55,11 @@ export default function CountryExpertsPage() {
           ))}
         </div>
 
-        <h2 className="mt-12 text-xl font-bold text-[#1A3A5C]">Persecution framework on this site</h2>
+        <h2 className="mt-12 text-xl font-bold text-[#0c1218]">Persecution framework on this site</h2>
         <ul className="mt-4 grid gap-2 sm:grid-cols-2">
           {persecutionTypes.slice(0, 4).map((p) => (
             <li key={p.slug}>
-              <Link href={`/persecution-types/${p.slug}`} className="text-[#C8922A] hover:underline">
+              <Link href={`/persecution-types/${p.slug}`} className="text-[#d66a3a] hover:underline">
                 {p.title}
               </Link>
             </li>
@@ -67,16 +67,16 @@ export default function CountryExpertsPage() {
         </ul>
 
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/persecution-grounds" className="font-semibold text-[#C8922A] hover:underline">
+          <Link href="/persecution-grounds" className="font-semibold text-[#d66a3a] hover:underline">
             Five Refugee Convention persecution grounds
           </Link>
-          <Link href="/how-reports-work" className="font-semibold text-[#C8922A] hover:underline">
+          <Link href="/how-reports-work" className="font-semibold text-[#d66a3a] hover:underline">
             How persecution expert reports work
           </Link>
-          <Link href="/how-to-instruct" className="font-semibold text-[#C8922A] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#d66a3a] hover:underline">
             How to instruct
           </Link>
-          <Link href="/contact" className="font-semibold text-[#C8922A] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#d66a3a] hover:underline">
             Contact us
           </Link>
         </div>
