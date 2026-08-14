@@ -30,7 +30,7 @@ export default function ServicesPage() {
         subtitle="Immigration Tribunal Practice Direction compliant reports for all major persecution grounds."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#3a4550] leading-relaxed">
+        <p className="mb-8 text-[#5c5348] leading-relaxed">
           Persecution Expert provides eight specialist expert report services for UK immigration solicitors, barristers,
           and Legal Aid practitioners. All reports are prepared by qualified persecution experts with familiarity in UK
           asylum law, tribunal practice, and persecution analysis methodology.
@@ -42,14 +42,14 @@ export default function ServicesPage() {
             href: `/services/${s.id}`,
           }))}
         />
-        <p className="mt-8 text-[#3a4550]">
+        <p className="mt-8 text-[#5c5348]">
           Questions about instructing an expert? See{" "}
-          <Link href="/how-to-instruct" className="font-semibold text-[#d66a3a] hover:underline">
-            how to instruct
+          <Link href="/how-to-instruct" className="font-semibold text-[#7c2430] hover:underline">
+            how to refer
           </Link>{" "}
           or{" "}
-          <Link href="/contact" className="font-semibold text-[#d66a3a] hover:underline">
-            contact us
+          <Link href="/contact" className="font-semibold text-[#7c2430] hover:underline">
+            refer a case
           </Link>
           .
         </p>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Karla, Source_Serif_4 } from "next/font/google";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsentProvider } from "@/components/cookies";
@@ -8,15 +8,15 @@ import { SITE_URL } from "@/lib/constants";
 import { isProductionSite } from "@/lib/seo/is-production";
 import "./globals.css";
 
-const fraunces = Fraunces({
+const sourceSerif = Source_Serif_4({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-source-serif",
   display: "swap",
 });
 
-const manrope = Manrope({
+const karla = Karla({
   subsets: ["latin"],
-  variable: "--font-manrope",
+  variable: "--font-karla",
   display: "swap",
 });
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${fraunces.variable} ${manrope.variable} h-full`}>
+    <html lang="en-GB" className={`${sourceSerif.variable} ${karla.variable} h-full`}>
       <body className="flex min-h-full min-w-0 flex-col overflow-x-hidden font-sans antialiased">
         <ConsentDefaultsScript />
         <CookieConsentProvider>

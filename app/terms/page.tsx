@@ -18,13 +18,13 @@ export default function TermsPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell title="Terms of Use" breadcrumbs={crumbs}>
-        <p className="text-[#3a4550] leading-relaxed">{SITE_UK_SCOPE}</p>
-        <p className="mt-4 text-[#3a4550] leading-relaxed">
+        <p className="text-[#5c5348] leading-relaxed">{SITE_UK_SCOPE}</p>
+        <p className="mt-4 text-[#5c5348] leading-relaxed">
           Persecution Expert is an expert witness matching service for UK immigration solicitors. We are not a law firm
           and do not provide legal advice. Expert reports instructed through our service operate independently and owe
           their primary duty to the tribunal under Immigration Tribunal Practice Direction paragraph 10.
         </p>
-        <p className="mt-4 text-[#3a4550] leading-relaxed">
+        <p className="mt-4 text-[#5c5348] leading-relaxed">
           Fees quoted are indicative and confirmed on instruction. Cancellation terms are agreed between the instructing
           solicitor and the expert at the point of engagement.
         </p>

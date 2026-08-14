@@ -15,14 +15,14 @@ export function GlossarySearch({ terms }: { terms: GlossaryTerm[] }) {
     <>
       <label htmlFor="glossary-search" className="sr-only">Search glossary</label>
       <input id="glossary-search" type="search" placeholder="Search terms…" value={q} onChange={(e) => setQ(e.target.value)}
-        className="mb-8 w-full max-w-md rounded-[4px] border border-[#b7c3cf] px-4 py-3 min-h-[44px] focus:border-[#0c1218] focus:outline-none focus:ring-1 focus:ring-[#0c1218]" />
+        className="mb-8 w-full max-w-md border border-rule bg-panel px-4 py-3 min-h-[44px] focus:border-ember focus:outline-none" />
       <dl className="space-y-6">
         {filtered.map((t) => (
-          <div key={t.slug} id={t.slug} className="scroll-mt-24 rounded-[8px] border border-[#b7c3cf] bg-white p-5">
-            <dt className="font-semibold text-[#0c1218]">{t.term}</dt>
-            <dd className="mt-2 text-[#3a4550] leading-relaxed">
+          <div key={t.slug} id={t.slug} className="scroll-mt-24 border-b border-rule py-5">
+            <dt className="font-display text-lg text-ink">{t.term}</dt>
+            <dd className="mt-2 text-body leading-relaxed">
               {t.definition}
-              {t.link && <> <Link href={t.link} className="text-[#d66a3a] hover:underline">Learn more →</Link></>}
+              {t.link && <> <Link href={t.link} className="link-ember">Learn more</Link></>}
             </dd>
           </div>
         ))}

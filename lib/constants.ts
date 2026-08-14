@@ -10,11 +10,11 @@ export const SITE_UK_SCOPE =
 export const LINKEDIN_URL = "https://www.linkedin.com/company/persecutionexpert";
 
 export const COLORS = {
-  primary: "#0c1218",
-  accent: "#d66a3a",
-  background: "#f5f7f9",
-  sectionAlt: "#e4e9ef",
-  border: "#b7c3cf",
-  heading: "#0c1218",
-  body: "#3a4550",
+  primary: "#2c261f",
+  accent: "#7c2430",
+  background: "#f6efe0",
+  sectionAlt: "#e8dcc4",
+  border: "#c9bba4",
+  heading: "#2c261f",
+  body: "#5c5348",
 } as const;

@@ -29,7 +29,7 @@ export const resourcesNavLinks: NavLink[] = [
   { label: "Persecution Grounds", href: "/persecution-grounds" },
   { label: "How Reports Work", href: "/how-reports-work" },
   { label: "Solicitor Guides", href: "/guides" },
-  { label: "How to Instruct", href: "/how-to-instruct" },
+  { label: "How to Refer", href: "/how-to-instruct" },
   { label: "Qualifications", href: "/qualifications" },
   { label: "Country Experts", href: "/country-experts" },
   { label: "Glossary", href: "/glossary" },
@@ -53,7 +53,7 @@ export const mobileNavGroups = [
     links: [
       { label: "Persecution Grounds", href: "/persecution-grounds" },
       { label: "How Reports Work", href: "/how-reports-work" },
-      { label: "How to Instruct", href: "/how-to-instruct" },
+      { label: "How to Refer", href: "/how-to-instruct" },
       { label: "Qualifications", href: "/qualifications" },
       { label: "Country Experts", href: "/country-experts" },
       { label: "Guides", href: "/guides" },

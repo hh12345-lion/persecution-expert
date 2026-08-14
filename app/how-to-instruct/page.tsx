@@ -54,18 +54,18 @@ export default function HowToInstructPage() {
       >
         {sections.map((section, i) => (
           <div key={i} className="mb-8">
-            <h2 className="text-xl font-bold text-[#0c1218]">{section.title}</h2>
-            <p className="mt-3 text-[#3a4550] leading-relaxed">{section.body}</p>
+            <h2 className="text-xl font-bold text-[#2c261f]">{section.title}</h2>
+            <p className="mt-3 text-[#5c5348] leading-relaxed">{section.body}</p>
           </div>
         ))}
 
-        <p className="text-[#3a4550] leading-relaxed">
-          Ready to instruct?{" "}
-          <Link href="/contact" className="text-[#d66a3a] hover:underline">
-            Submit your case details
+        <p className="text-[#5c5348] leading-relaxed">
+          Ready to refer a case?{" "}
+          <Link href="/contact" className="text-[#7c2430] hover:underline">
+            Send a case note
           </Link>{" "}
           or read our{" "}
-          <Link href="/guides/expert-report-standards-guide" className="text-[#d66a3a] hover:underline">
+          <Link href="/guides/expert-report-standards-guide" className="text-[#7c2430] hover:underline">
             expert report standards guide
           </Link>
           .

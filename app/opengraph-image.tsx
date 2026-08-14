@@ -15,15 +15,15 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          backgroundColor: "#0c1218",
+          backgroundColor: "#f6efe0",
           padding: 80,
         }}
       >
         <div
           style={{
-            fontSize: 64,
-            fontWeight: 700,
-            color: "#FFFFFF",
+            fontSize: 56,
+            fontWeight: 600,
+            color: "#2c261f",
             letterSpacing: "-0.02em",
             textAlign: "center",
             lineHeight: 1.1,
@@ -31,12 +31,20 @@ export default function OpenGraphImage() {
         >
           Persecution Expert
         </div>
+        <div
+          style={{
+            marginTop: 24,
+            width: 160,
+            height: 3,
+            backgroundColor: "#7c2430",
+          }}
+        />
         <p
           style={{
-            marginTop: 32,
-            fontSize: 36,
-            fontWeight: 600,
-            color: "#d66a3a",
+            marginTop: 28,
+            fontSize: 28,
+            fontWeight: 500,
+            color: "#7c2430",
             textAlign: "center",
             lineHeight: 1.3,
           }}

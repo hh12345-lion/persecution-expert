@@ -2,11 +2,6 @@ import { google, sheets_v4 } from "googleapis";
 
 type CellValue = string | number | boolean | null;
 
-interface SheetTarget {
-  spreadsheetId?: string;
-  sheetName?: string;
-}
-
 interface AppendResult {
   success: boolean;
   updatedRange: string | null | undefined;
@@ -26,21 +21,27 @@ function getSheetsClient(): sheets_v4.Sheets {
   return google.sheets({ version: "v4", auth: getAuthClient() });
 }
 
-export async function appendRow(
-  values: CellValue[],
-  target?: SheetTarget
-): Promise<AppendResult> {
+export function isGoogleSheetsConfigured(): boolean {
+  return Boolean(
+    process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL &&
+      process.env.GOOGLE_PRIVATE_KEY &&
+      process.env.GOOGLE_SHEET_ID
+  );
+}
+
+/** All leads write to the single tab named in GOOGLE_SHEET_TAB_NAME. */
+export async function appendRow(values: CellValue[]): Promise<AppendResult> {
   const sheets = getSheetsClient();
-  const spreadsheetId = target?.spreadsheetId || process.env.GOOGLE_SHEET_ID;
-  const sheetName = target?.sheetName || process.env.GOOGLE_SHEET_TAB_NAME || "Sheet1";
+  const spreadsheetId = process.env.GOOGLE_SHEET_ID;
+  const sheetName = process.env.GOOGLE_SHEET_TAB_NAME || "Sheet1";
 
   if (!spreadsheetId) {
-    throw new Error("Missing spreadsheet ID: set GOOGLE_SHEET_ID or pass spreadsheetId");
+    throw new Error("Missing spreadsheet ID: set GOOGLE_SHEET_ID");
   }
 
   const response = await sheets.spreadsheets.values.append({
     spreadsheetId,
-    range: `${sheetName}!A:A`,
+    range: `'${sheetName}'!A:A`,
     valueInputOption: "USER_ENTERED",
     insertDataOption: "INSERT_ROWS",
     requestBody: {

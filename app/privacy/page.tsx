@@ -18,19 +18,19 @@ export default function PrivacyPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell title="Privacy Policy" breadcrumbs={crumbs}>
-        <p className="text-[#3a4550] leading-relaxed">
+        <p className="text-[#5c5348] leading-relaxed">
           Persecution Expert is operated to connect UK solicitors with qualified persecution expert witnesses. We collect
           personal data submitted through our contact form (name, law firm, email, phone, and case details) solely to
           respond to instruction requests and match appropriate experts.
         </p>
-        <p className="mt-4 text-[#3a4550] leading-relaxed">
+        <p className="mt-4 text-[#5c5348] leading-relaxed">
           Contact form submissions are stored securely and may trigger email notifications to our team. We retain
           data only as long as necessary to fulfil your request. We do not sell personal data. You may request deletion
           by emailing {SITE_EMAIL}. We use cookies as described in our Cookie Policy. Non-essential tracking scripts load
           only after you grant consent.
         </p>
-        <h2 className="mt-8 text-lg font-bold text-[#0c1218]">Your Rights (GDPR)</h2>
-        <p className="mt-4 text-[#3a4550] leading-relaxed">
+        <h2 className="mt-8 text-lg font-bold text-[#2c261f]">Your Rights (GDPR)</h2>
+        <p className="mt-4 text-[#5c5348] leading-relaxed">
           You have the right to access, rectify, erase, restrict processing, and port your personal data. You may
           withdraw consent for non-essential cookies at any time via Cookie Settings in the footer. To exercise your
           rights, contact {SITE_EMAIL}.

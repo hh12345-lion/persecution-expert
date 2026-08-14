@@ -38,18 +38,18 @@ export default async function CaseTypePage({ params }: { params: Promise<{ slug:
       <PageJsonLd breadcrumbs={crumbs} faqs={caseType.faqs} />
       <PageShell title={caseType.h1} breadcrumbs={crumbs}>
         {caseType.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#3a4550] leading-relaxed">
+          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
             {p}
           </p>
         ))}
 
-        <h2 className="mt-8 text-xl font-bold text-[#0c1218]">Related Persecution Types</h2>
+        <h2 className="mt-8 text-xl font-bold text-[#2c261f]">Related Persecution Types</h2>
         <ul className="mt-4 space-y-2">
           {caseType.relatedPersecutionTypes.map((s) => {
             const pt = getPersecutionType(s);
             return (
               <li key={s}>
-                <Link href={`/persecution-types/${s}`} className="text-[#d66a3a] hover:underline">
+                <Link href={`/persecution-types/${s}`} className="text-[#7c2430] hover:underline">
                   {pt?.title ?? s}
                 </Link>
               </li>

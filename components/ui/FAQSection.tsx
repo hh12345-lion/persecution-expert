@@ -16,11 +16,11 @@ export function FAQSection({
       <h2 id={`${id}-heading`} className="mb-8 font-display text-2xl text-ink sm:text-3xl">
         {title}
       </h2>
-      <div className="divide-y divide-rule border-y border-rule">
+      <div className="space-y-8">
         {faqs.map((faq) => (
-          <div key={faq.question} className="py-6">
+          <div key={faq.question}>
             <h3 className="font-display text-lg text-ink">{faq.question}</h3>
-            <p className="mt-3 leading-relaxed text-body">{faq.answer}</p>
+            <p className="mt-2 leading-relaxed text-body">{faq.answer}</p>
           </div>
         ))}
       </div>

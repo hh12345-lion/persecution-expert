@@ -23,7 +23,7 @@ export default function GuidesPage() {
         subtitle="Practical guides for UK immigration solicitors instructing persecution expert witnesses."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#3a4550] leading-relaxed">
+        <p className="mb-8 text-[#5c5348] leading-relaxed">
           These guides cover persecution grounds analysis, state protection methodology, internal relocation, and the
           instruction process for Legal Aid and privately funded cases. All guides align with Immigration Tribunal
           Practice Direction paragraph 10 and the Adam Pipe October 2025 guide.
@@ -35,9 +35,9 @@ export default function GuidesPage() {
             href: `/guides/${g.slug}`,
           }))}
         />
-        <p className="mt-8 text-[#3a4550]">
+        <p className="mt-8 text-[#5c5348]">
           For a comprehensive overview, see our{" "}
-          <Link href="/persecution-grounds" className="font-semibold text-[#d66a3a] hover:underline">
+          <Link href="/persecution-grounds" className="font-semibold text-[#7c2430] hover:underline">
             persecution grounds pillar page
           </Link>
           .

@@ -38,14 +38,14 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
       />
       <PageShell title={guide.h1} breadcrumbs={crumbs}>
         {guide.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#3a4550] leading-relaxed">
+          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
             {p}
           </p>
         ))}
         <FAQSection faqs={guide.faqs} />
         <Link
           href="/contact"
-          className="mt-8 inline-flex min-h-[44px] items-center rounded-[4px] bg-[#d66a3a] px-6 py-3 font-semibold text-white hover:bg-[#b85328]"
+          className="mt-8 inline-flex min-h-[44px] items-center rounded-[4px] bg-[#7c2430] px-6 py-3 font-semibold text-white hover:bg-[#5c1a24]"
         >
           Contact Us
         </Link>

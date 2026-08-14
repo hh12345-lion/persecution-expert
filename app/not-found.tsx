@@ -7,46 +7,43 @@ export default function NotFound() {
 
   return (
     <>
-      <section className="bg-ink py-16 text-center md:py-20">
-        <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-ember">Persecution Expert</p>
-          <p className="mt-6 font-display text-7xl text-ember/90 sm:text-8xl" aria-hidden="true">
-            404
-          </p>
-          <h1 className="mt-2 font-display text-3xl text-white sm:text-4xl">Page not found</h1>
-          <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-white/65">
-            That URL is not in the index. Use the links below for UK persecution expert witness guidance.
-          </p>
-          <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
-            <Link
-              href="/"
-              className="inline-flex min-h-[44px] items-center justify-center bg-ember px-8 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
-            >
-              Home
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex min-h-[44px] items-center justify-center border border-white/30 px-8 py-3 text-sm font-semibold text-white hover:border-ember"
-            >
-              Instruct
-            </Link>
-          </div>
+      <section className="mx-auto max-w-2xl px-4 py-14 text-center sm:px-6 sm:py-16">
+        <p className="text-[11px] uppercase tracking-[0.2em] text-slate">Persecution Expert</p>
+        <p className="mt-4 font-display text-6xl text-ember sm:text-7xl" aria-hidden="true">
+          404
+        </p>
+        <h1 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Page not found</h1>
+        <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-body">
+          That page is not in this folio. Use the links below for UK persecution expert witness guidance.
+        </p>
+        <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <Link
+            href="/"
+            className="inline-flex min-h-[44px] items-center justify-center bg-ember px-8 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
+          >
+            Home
+          </Link>
+          <Link
+            href="/contact"
+            className="inline-flex min-h-[44px] items-center justify-center border border-ink/20 px-8 py-3 text-sm font-semibold text-ink hover:border-ember"
+          >
+            Refer a case
+          </Link>
         </div>
       </section>
 
-      <section className="bg-panel py-12">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6">
+      <section className="bg-mist py-12">
+        <div className="mx-auto max-w-2xl px-4 sm:px-6">
           <h2 className="font-display text-xl text-ink">Popular destinations</h2>
-          <ul className="mt-6 divide-y divide-rule border-y border-rule">
+          <ul className="mt-4 space-y-2">
             {[
               { label: "Persecution Types", href: "/persecution-types" },
               { label: "Expert Services", href: "/services" },
               { label: "Persecution Grounds", href: "/persecution-grounds" },
-              { label: "How to Instruct", href: "/how-to-instruct" },
-            ].map((item, i) => (
+              { label: "How to refer", href: "/how-to-instruct" },
+            ].map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="flex min-h-[44px] items-center gap-4 py-3 text-ink hover:text-ember">
-                  <span className="font-mono text-xs text-ember">{String(i + 1).padStart(2, "0")}</span>
+                <Link href={item.href} className="inline-flex min-h-[44px] items-center text-ink hover:text-ember">
                   {item.label}
                 </Link>
               </li>
@@ -56,7 +53,7 @@ export default function NotFound() {
       </section>
 
       <section className="py-12">
-        <div className="mx-auto grid max-w-3xl gap-10 px-4 sm:px-6 sm:grid-cols-2">
+        <div className="mx-auto grid max-w-2xl gap-10 px-4 sm:grid-cols-2 sm:px-6">
           <div>
             <h2 className="font-display text-lg text-ink">Persecution types</h2>
             <ul className="mt-3 space-y-2">
