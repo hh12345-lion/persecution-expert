@@ -29,7 +29,8 @@ export function isGoogleSheetsConfigured(): boolean {
   );
 }
 
-/** All leads write to the single tab named in GOOGLE_SHEET_TAB_NAME. */
+/** All leads write to the single tab named in GOOGLE_SHEET_TAB_NAME.
+ *  Column order must match lib/sheet-columns.json (row 1 via `npm run sheets:headers`). */
 export async function appendRow(values: CellValue[]): Promise<AppendResult> {
   const sheets = getSheetsClient();
   const spreadsheetId = process.env.GOOGLE_SHEET_ID;

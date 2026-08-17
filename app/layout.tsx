@@ -48,6 +48,9 @@ export const metadata: Metadata = {
     },
   },
   robots: isProductionSite() ? { index: true, follow: true } : { index: false, follow: false },
+  icons: {
+    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

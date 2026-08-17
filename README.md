@@ -17,6 +17,12 @@ cp .env.example .env.local   # then fill in Google Sheets credentials
 npm run dev
 ```
 
+Write brief-form column headers (one-time):
+
+```bash
+npm run sheets:headers
+```
+
 Test Google Sheets connection:
 
 ```bash
@@ -57,6 +63,8 @@ Do not commit `.next/` or `.env.local`.
 
 Submissions POST to `/api/submit-lead` and append a row to Google Sheets with:
 
-Timestamp, Full Name, Law Firm, Email, Phone, Case Profile, Proceedings, Funding, Deadline, Urgency, Brief Case Description, Brand name
+Timestamp, Name, Firm, Email, Case note, Brand name
+
+Run `npm run sheets:headers` once so row 1 has those field names as columns.
 
 Optional webhook notification if `Lead_notification_url` is set.

@@ -22,11 +22,6 @@ export function ContactForm() {
       fullName: String(data.get("name") ?? "").trim(),
       organisation: String(data.get("law_firm") ?? "").trim(),
       email: String(data.get("email") ?? "").trim(),
-      phone: "",
-      persecutionGround: "",
-      countryOfOrigin: "",
-      proceedings: "",
-      funding: "",
       summary: String(data.get("summary") ?? "").trim(),
       _gotcha: String(data.get("_gotcha") ?? "").trim(),
     };

@@ -1,17 +1,14 @@
 import { NextResponse } from "next/server";
 import { appendRow, isGoogleSheetsConfigured } from "@/lib/google-sheets";
+import sheetColumns from "@/lib/sheet-columns.json";
 
 const BRAND_NAME = "Persecution Expert";
+const LEAD_HEADERS = sheetColumns.headers;
 
 type LeadBody = {
   fullName?: unknown;
   organisation?: unknown;
   email?: unknown;
-  phone?: unknown;
-  persecutionGround?: unknown;
-  countryOfOrigin?: unknown;
-  proceedings?: unknown;
-  funding?: unknown;
   summary?: unknown;
   _gotcha?: unknown;
 };
@@ -39,7 +36,6 @@ export async function POST(request: Request) {
   const fullName = sanitize(String(body.fullName ?? ""));
   const organisation = sanitize(String(body.organisation ?? ""));
   const email = String(body.email ?? "").toLowerCase().trim();
-  const phone = sanitize(String(body.phone ?? ""));
   const summary = sanitize(String(body.summary ?? ""));
 
   if (!fullName || !email || !organisation || !summary) {
@@ -60,19 +56,15 @@ export async function POST(request: Request) {
     );
   }
 
-  const row = [
-    new Date().toISOString(),
-    fullName,
-    organisation,
-    email,
-    phone,
-    sanitize(String(body.persecutionGround ?? "")),
-    sanitize(String(body.countryOfOrigin ?? "")),
-    sanitize(String(body.proceedings ?? "")),
-    sanitize(String(body.funding ?? "")),
-    summary,
-    BRAND_NAME,
-  ];
+  const byHeader: Record<string, string> = {
+    Timestamp: new Date().toISOString(),
+    Name: fullName,
+    Firm: organisation,
+    Email: email,
+    "Case note": summary,
+    "Brand name": BRAND_NAME,
+  };
+  const row = LEAD_HEADERS.map((header) => byHeader[header] ?? "");
 
   if (sheetsConfigured) {
     try {
@@ -90,9 +82,10 @@ export async function POST(request: Request) {
 
   if (webhookUrl) {
     const outbound = {
-      "Full Name": fullName,
+      Name: fullName,
+      Firm: organisation,
       Email: email,
-      "Phone Number": phone,
+      "Case note": summary,
       "Brand name": BRAND_NAME,
     };
 

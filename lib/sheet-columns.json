@@ -1,0 +1,10 @@
+{
+  "headers": [
+    "Timestamp",
+    "Name",
+    "Firm",
+    "Email",
+    "Case note",
+    "Brand name"
+  ]
+}
