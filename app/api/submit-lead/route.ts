@@ -2,6 +2,15 @@ import { NextResponse } from "next/server";
 import { appendRow, isGoogleSheetsConfigured } from "@/lib/google-sheets";
 import sheetColumns from "@/lib/sheet-columns.json";
 
+
+function getSiteDomain(): string {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL || "https://persecutionexpert.com";
+  try {
+    return new URL(raw).hostname.replace(/^www\./, "");
+  } catch {
+    return "persecutionexpert.com";
+  }
+}
 const BRAND_NAME = "Persecution Expert";
 const LEAD_HEADERS = sheetColumns.headers;
 
@@ -63,6 +72,7 @@ export async function POST(request: Request) {
     Email: email,
     "Case note": summary,
     "Brand name": BRAND_NAME,
+    domain: getSiteDomain(),
   };
   const row = LEAD_HEADERS.map((header) => byHeader[header] ?? "");
 
@@ -87,6 +97,7 @@ export async function POST(request: Request) {
       Email: email,
       "Case note": summary,
       "Brand name": BRAND_NAME,
+    domain: getSiteDomain(),
     };
 
     try {
