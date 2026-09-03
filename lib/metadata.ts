@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL } from "./constants";
 import { isProductionSite } from "./seo/is-production";
+import { normalizeSeoDescription, normalizeSeoTitle } from "./seo/meta-limits";
 
 const OG_IMAGE_ALT = "Persecution Expert - Persecution Expert Witness UK";
 
@@ -26,20 +27,22 @@ export function createMetadata({
 }): Metadata {
   const url = `${SITE_URL}${path}`;
   const blockIndexing = noindex || !isProductionSite();
+  const seoTitle = normalizeSeoTitle(title);
+  const seoDescription = normalizeSeoDescription(description);
   return {
-    title,
-    description,
+    title: { absolute: seoTitle },
+    description: seoDescription,
     alternates: { canonical: url },
     openGraph: {
-      title,
-      description,
+      title: seoTitle,
+      description: seoDescription,
       url,
       siteName: "Persecution Expert",
       locale: "en_GB",
       type: "website",
       images: [OPEN_GRAPH_IMAGE],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title: seoTitle, description: seoDescription },
     robots: blockIndexing
       ? { index: false, follow, googleBot: { index: false, follow } }
       : { index: true, follow: true },

@@ -58,6 +58,18 @@ export default async function PersecutionTypePage({ params }: { params: Promise<
         </ul>
 
         <FAQSection faqs={type.faqs} />
+
+        <div className="mt-8 flex flex-wrap gap-4 text-sm">
+          <Link href="/persecution-grounds" className="text-[#7c2430] hover:underline">
+            Persecution grounds
+          </Link>
+          <Link href="/how-reports-work" className="text-[#7c2430] hover:underline">
+            How reports work
+          </Link>
+          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+            How to refer
+          </Link>
+        </div>
       </PageShell>
     </>
   );

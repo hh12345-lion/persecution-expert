@@ -10,7 +10,8 @@
     "lint": "eslint",
     "seo:generate": "tsx scripts/generate-seo.ts",
     "seo:verify": "tsx scripts/verify-seo.ts",
-    "sheets:headers": "node scripts/write-sheet-headers.mjs"
+    "sheets:headers": "node scripts/write-sheet-headers.mjs",
+    "images:compress": "node scripts/compress-images.mjs"
   },
   "dependencies": {
     "googleapis": "^172.0.0",
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "sharp": "^0.35.4",
     "tailwindcss": "^4",
     "tsx": "^4.19.4",
     "typescript": "^5"

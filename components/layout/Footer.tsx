@@ -15,6 +15,23 @@ export function Footer() {
         <a href={`mailto:${SITE_EMAIL}`} className="text-sm text-body hover:text-ember">
           {SITE_EMAIL}
         </a>
+        <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-body/80" aria-label="Resources">
+          <Link href="/persecution-grounds" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            Grounds
+          </Link>
+          <Link href="/how-reports-work" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            Reports
+          </Link>
+          <Link href="/guides" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            Guides
+          </Link>
+          <Link href="/what-is-a-persecution-expert" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            About
+          </Link>
+          <Link href="/qualifications" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            Qualifications
+          </Link>
+        </nav>
         <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-[12px] text-body/80" aria-label="Legal">
           <Link href="/privacy" className="inline-flex min-h-[44px] items-center hover:text-ember">
             Privacy

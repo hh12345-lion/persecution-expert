@@ -8,4 +8,4 @@ Disallow: /admin/
 Disallow: /private/
 Disallow: /.netlify/
 
-Sitemap: https://www.persecutionexpert.com/sitemap.xml
+Sitemap: https://persecutionexpert.com/sitemap.xml

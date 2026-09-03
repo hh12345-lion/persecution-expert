@@ -1,6 +1,6 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
-  "https://www.persecutionexpert.com";
+  "https://persecutionexpert.com";
 export const SITE_NAME = "Persecution Expert";
 export const SITE_EMAIL = "cases@persecutionexpert.com";
 

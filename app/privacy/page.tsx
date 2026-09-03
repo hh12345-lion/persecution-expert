@@ -5,7 +5,8 @@ import { SITE_EMAIL } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Privacy Policy | Persecution Expert",
-  description: "Privacy policy for persecutionexpert.com",
+  description:
+    "How Persecution Expert collects, stores, and protects contact form data from UK solicitors under UK GDPR and PECR, including retention, rights, and cookie use.",
   path: "/privacy",
   noindex: true,
   follow: true,

@@ -14,6 +14,6 @@ export const SLUG_REDIRECTS: Record<string, string> = {
   "/expertise-areas/gender-based-persecution": "/persecution-types/gender-based-persecution",
   "/expertise-areas/state-protection": "/persecution-types/state-persecution-direct",
   "/expertise-areas/non-state-actors": "/persecution-types/non-state-actor-persecution",
-  "/expertise-areas/internal-relocation": "/guides/internal-relocation-asylum-guide",
+  "/expertise-areas/internal-relocation": "/guides/internal-relocation-guide",
   "/expertise-areas/racial-ethnic-persecution": "/persecution-types/racial-ethnic-persecution",
 };

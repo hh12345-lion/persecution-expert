@@ -6,6 +6,7 @@ import { CookieConsentProvider } from "@/components/cookies";
 import { ConsentDefaultsScript } from "@/components/cookies/ConsentDefaultsScript";
 import { SITE_URL } from "@/lib/constants";
 import { isProductionSite } from "@/lib/seo/is-production";
+import { normalizeSeoDescription, normalizeSeoTitle } from "@/lib/seo/meta-limits";
 import "./globals.css";
 
 const sourceSerif = Source_Serif_4({
@@ -29,11 +30,12 @@ export const viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Persecution Expert Witness UK | Asylum & Immigration Tribunal Reports",
-    template: "%s | Persecution Expert",
+    default: normalizeSeoTitle("Persecution Expert Witness UK | Asylum Tribunal Reports"),
+    template: "%s",
   },
-  description:
-    "Find a qualified persecution expert witness in the UK. Independent expert reports on political opinion, religious persecution, LGBTQ+, gender-based violence, race, and particular social group asylum claims.",
+  description: normalizeSeoDescription(
+    "Qualified persecution expert witnesses for UK asylum and immigration tribunals. Independent reports on Convention grounds, state protection, and internal relocation.",
+  ),
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION,
     other: process.env.BING_SITE_VERIFICATION

@@ -70,6 +70,20 @@ export default function HowToInstructPage() {
           </Link>
           .
         </p>
+        <div className="mt-10 flex flex-wrap gap-4">
+          <Link href="/persecution-grounds" className="font-semibold text-[#7c2430] hover:underline">
+            Persecution grounds guide
+          </Link>
+          <Link href="/how-reports-work" className="font-semibold text-[#7c2430] hover:underline">
+            How reports work
+          </Link>
+          <Link href="/country-experts" className="font-semibold text-[#7c2430] hover:underline">
+            Country expert network
+          </Link>
+          <Link href="/guides" className="font-semibold text-[#7c2430] hover:underline">
+            Solicitor guides
+          </Link>
+        </div>
       </PageShell>
     </>
   );

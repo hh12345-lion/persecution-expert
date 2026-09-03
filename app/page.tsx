@@ -10,9 +10,9 @@ import { createMetadata } from "@/lib/metadata";
 import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
-  title: "Persecution Expert Witness UK | Asylum & Immigration Tribunal Reports",
+  title: "Persecution Expert Witness UK | Asylum Tribunal Reports",
   description:
-    "Find a qualified persecution expert witness in the UK. Independent expert reports on political opinion, religious persecution, LGBTQ+, gender-based violence, race, and particular social group asylum claims.",
+    "Qualified persecution expert witnesses for UK asylum and immigration tribunals. Independent reports on Convention grounds, state protection, and internal relocation.",
   path: "/",
 });
 
@@ -52,10 +52,11 @@ export default function HomePage() {
           <figure className="border border-rule bg-mist p-2">
             <div className="relative aspect-[4/3]">
               <Image
-                src="/images/folio-window-desk.png"
+                src="/images/folio-window-desk.webp"
                 alt="Sunlit desk with parchment papers and a fountain pen"
                 fill
                 priority
+                quality={80}
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40vw"
               />
@@ -158,9 +159,10 @@ export default function HomePage() {
             <figure className="border border-rule bg-mist p-2">
               <div className="relative aspect-[4/3]">
                 <Image
-                  src="/images/brief-ringbound.png"
+                  src="/images/brief-ringbound.webp"
                   alt="Ring-bound tribunal brief on a cool stone desk"
                   fill
+                  quality={80}
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 30vw"
                 />

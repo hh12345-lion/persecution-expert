@@ -58,6 +58,18 @@ export default async function CaseTypePage({ params }: { params: Promise<{ slug:
         </ul>
 
         <FAQSection faqs={caseType.faqs} />
+
+        <div className="mt-8 flex flex-wrap gap-4 text-sm">
+          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+            How to refer
+          </Link>
+          <Link href="/how-reports-work" className="text-[#7c2430] hover:underline">
+            How reports work
+          </Link>
+          <Link href="/country-experts" className="text-[#7c2430] hover:underline">
+            Country experts
+          </Link>
+        </div>
       </PageShell>
     </>
   );

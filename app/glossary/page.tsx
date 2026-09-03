@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { PageShell } from "@/components/layout/PageShell";
 import { GlossarySearch } from "@/components/glossary/GlossarySearch";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
@@ -26,7 +27,9 @@ export default function GlossaryPage() {
         subtitle="35 definition-first terms for UK immigration practitioners."
         breadcrumbs={crumbs}
       >
-        <GlossarySearch terms={glossaryTerms} />
+        <Suspense fallback={null}>
+          <GlossarySearch terms={glossaryTerms} />
+        </Suspense>
       </PageShell>
     </>
   );

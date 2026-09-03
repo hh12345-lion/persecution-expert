@@ -5,7 +5,8 @@ import { SITE_UK_SCOPE } from "@/lib/constants";
 
 export const metadata = createMetadata({
   title: "Terms of Use | Persecution Expert",
-  description: "Terms of use for persecutionexpert.com",
+  description:
+    "Terms of use for persecutionexpert.com: UK tribunal expert witness matching scope, solicitor responsibilities, fee terms, and limitations for this referral service.",
   path: "/terms",
   noindex: true,
   follow: true,
