@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { SITE_EMAIL } from "@/lib/constants";
+import { submitNetlifyForm } from "@/lib/submitNetlifyForm";
 
 const inputClass =
   "w-full min-w-0 max-w-full border border-rule bg-panel px-3 py-3 text-base text-ink placeholder:text-body/40 focus:border-ember focus:outline-none min-h-[44px]";
@@ -32,15 +33,38 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      if (res.ok) router.push("/thank-you");
-      else setStatus("error");
+      if (res.ok) {
+        try {
+          await submitNetlifyForm("contact", {
+            name: String(data.get("name") ?? "").trim(),
+            law_firm: String(data.get("law_firm") ?? "").trim(),
+            email: String(data.get("email") ?? "").trim(),
+            summary: String(data.get("summary") ?? "").trim(),
+          });
+        } catch {
+          // Sheets/webhook already stored the enquiry; don't block the visitor.
+        }
+        router.push("/thank-you");
+      } else setStatus("error");
     } catch {
       setStatus("error");
     }
   }
 
   return (
-    <form onSubmit={handleSubmit} className="min-w-0 w-full space-y-5">
+    <form
+      name="contact"
+      method="POST"
+      action="/__forms.html"
+      onSubmit={handleSubmit}
+      className="min-w-0 w-full space-y-5"
+    >
+      <input type="hidden" name="form-name" value="contact" />
+      <p className="hidden" aria-hidden="true">
+        <label>
+          Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
+        </label>
+      </p>
       <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="min-w-0">
