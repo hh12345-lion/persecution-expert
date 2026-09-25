@@ -96,6 +96,61 @@ section {
   color: #5c1a24;
 }
 
+.prose-content h2 {
+  color: #2c261f;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose-content h3 {
+  color: #2c261f;
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-content p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: #5c5348;
+}
+
+.prose-content ul,
+.prose-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: #5c5348;
+}
+
+.prose-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.75;
+}
+
+.prose-content a {
+  color: #7c2430;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.prose-content a:hover {
+  color: #5c1a24;
+}
+
+.prose-content strong {
+  color: #2c261f;
+  font-weight: 600;
+}
+
+.prose-content em {
+  font-style: italic;
+}
+
 .hang-toc {
   background: #f6efe0;
   border: 1px solid #c9bba4;

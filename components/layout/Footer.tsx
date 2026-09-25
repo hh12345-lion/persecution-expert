@@ -25,6 +25,9 @@ export function Footer() {
           <Link href="/guides" className="inline-flex min-h-[44px] items-center hover:text-ember">
             Guides
           </Link>
+          <Link href="/blog" className="inline-flex min-h-[44px] items-center hover:text-ember">
+            Blog
+          </Link>
           <Link href="/what-is-a-persecution-expert" className="inline-flex min-h-[44px] items-center hover:text-ember">
             About
           </Link>
