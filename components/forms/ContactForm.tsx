@@ -97,7 +97,7 @@ export function ContactForm() {
           name="summary"
           required
           rows={4}
-          placeholder="Ground, country, hearing stage — a few lines is enough."
+          placeholder="Ground, country, hearing stage, a few lines is enough."
           className={`${inputClass} min-h-[96px] resize-y`}
         />
       </div>

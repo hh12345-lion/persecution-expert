@@ -5,6 +5,7 @@ import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { getAllBlogPosts } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { createMetadata } from "@/lib/metadata";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Blog | Persecution Expert Insights",
@@ -39,6 +40,7 @@ export default function BlogIndexPage() {
         }}
       />
       <PageShell
+        photo={photoFor("/blog")}
         title="Persecution Expert Blog"
         subtitle="Practitioner-facing articles on persecution expert evidence, country information, and instructing specialists for UK tribunal matters."
         breadcrumbs={crumbs}
@@ -101,7 +103,7 @@ export default function BlogIndexPage() {
                       href={`/blog/${post.slug}`}
                       className="text-sm font-semibold text-ember hover:text-ember-deep"
                     >
-                      Read article →
+                      Read article
                     </Link>
                   </p>
                 </div>

@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { servicesPageGraph } from "@/lib/schema";
 import { services } from "@/data/services";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Persecution Expert Witness Services | Asylum & Immigration Tribunals",
@@ -26,11 +27,12 @@ export default function ServicesPage() {
         )}
       />
       <PageShell
+        photo={photoFor("/services")}
         title="Persecution Expert Witness Services"
         subtitle="Immigration Tribunal Practice Direction compliant reports for all major persecution grounds."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#5c5348] leading-relaxed">
+        <p className="mb-8 text-[#4a4246] leading-relaxed">
           Persecution Expert provides eight specialist expert report services for UK immigration solicitors, barristers,
           and Legal Aid practitioners. All reports are prepared by qualified persecution experts with familiarity in UK
           asylum law, tribunal practice, and persecution analysis methodology.
@@ -42,13 +44,13 @@ export default function ServicesPage() {
             href: `/services/${s.id}`,
           }))}
         />
-        <p className="mt-8 text-[#5c5348]">
+        <p className="mt-8 text-[#4a4246]">
           Questions about instructing an expert? See{" "}
-          <Link href="/how-to-instruct" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/how-to-instruct" className="font-semibold text-[#5f1b27] hover:underline">
             how to refer
           </Link>{" "}
           or{" "}
-          <Link href="/contact" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/contact" className="font-semibold text-[#5f1b27] hover:underline">
             refer a case
           </Link>
           .

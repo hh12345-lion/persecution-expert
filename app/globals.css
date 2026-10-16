@@ -1,22 +1,25 @@
 @import "tailwindcss";
 
 @theme inline {
-  --color-ink: #2c261f;
-  --color-ink-soft: #3d362d;
-  --color-ember: #7c2430;
-  --color-ember-deep: #5c1a24;
-  --color-slate: #234338;
-  --color-mist: #e8dcc4;
-  --color-panel: #f6efe0;
-  --color-rule: #c9bba4;
-  --color-body: #5c5348;
-  --color-primary: #2c261f;
-  --color-accent: #7c2430;
-  --color-highlight: #7c2430;
-  --color-section-alt: #e8dcc4;
-  --color-border: #c9bba4;
-  --font-display: var(--font-source-serif);
-  --font-sans: var(--font-karla);
+  --color-ink: #3c3438;
+  --color-ink-soft: #4e464a;
+  --color-ember: #5f1b27;
+  --color-ember-deep: #46131d;
+  --color-slate: #7a8287;
+  --color-mist: #efeced;
+  --color-panel: #f8f7f7;
+  --color-rule: #d7d1d3;
+  --color-body: #4a4246;
+  --color-primary: #3c3438;
+  --color-accent: #5f1b27;
+  --color-highlight: #5f1b27;
+  --color-section-alt: #efeced;
+  --color-border: #d7d1d3;
+  --font-display: var(--font-archivo);
+  --font-sans: var(--font-spectral);
+  --color-grey: #7a8287;
+  --color-wine: #5f1b27;
+  --color-off: #f8f7f7;
   --radius-card: 0px;
   --radius-sm: 0px;
   --shadow-card: none;
@@ -29,39 +32,86 @@ html {
 }
 
 body {
-  background-color: #f6efe0;
-  background-image:
-    linear-gradient(180deg, rgba(124, 36, 48, 0.04), transparent 18%),
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 31px,
-      rgba(44, 38, 31, 0.025) 31px,
-      rgba(44, 38, 31, 0.025) 32px
-    );
-  color: #5c5348;
-  font-family: var(--font-karla), system-ui, sans-serif;
+  background-color: #f8f7f7;
+  color: #4a4246;
+  font-family: var(--font-spectral), Georgia, serif;
+  font-size: 1.0625rem;
   overflow-x: hidden;
   min-width: 320px;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
 }
 
-h1,
-h2,
-h3,
-.font-display {
-  font-family: var(--font-source-serif), "Iowan Old Style", Georgia, serif;
-  font-optical-sizing: auto;
-  letter-spacing: -0.015em;
-  color: #2c261f;
+@layer base {
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+    letter-spacing: -0.02em;
+    color: #3c3438;
+  }
 }
 
-img,
-video,
-svg {
-  max-width: 100%;
-  height: auto;
+@layer base {
+  img,
+  video,
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Interface text uses Archivo; running text stays in Spectral. */
+nav,
+button,
+input,
+select,
+textarea,
+label,
+.font-ui {
+  font-family: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Photo frame from the monogram: the open palm curve along the lower right, a cradled image. */
+.palm-frame {
+  border-bottom-right-radius: 46% 30%;
+  border-top-left-radius: 1.25rem;
+}
+
+.palm-frame-sm {
+  border-bottom-right-radius: 40% 26%;
+}
+
+/* Desktop dropdowns open on hover or keyboard focus without client script. */
+.nav-item .nav-panel {
+  display: none;
+}
+
+.nav-item:hover .nav-panel,
+.nav-item:focus-within .nav-panel {
+  display: block;
+}
+
+details.fold > summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details.fold > summary::-webkit-details-marker {
+  display: none;
+}
+
+details.fold[open] .fold-sign {
+  transform: rotate(45deg);
+}
+
+#mobile-nav-toggle:checked ~ .header-bar .icon-open {
+  display: none;
+}
+
+#mobile-nav-toggle:checked ~ .header-bar .icon-close {
+  display: block;
 }
 
 a {
@@ -75,29 +125,29 @@ section {
 }
 
 ::selection {
-  background: rgba(124, 36, 48, 0.18);
-  color: #2c261f;
+  background: rgba(95, 27, 39, 0.18);
+  color: #3c3438;
 }
 
 .folio-rule {
   height: 3px;
-  border-top: 1px solid #7c2430;
-  border-bottom: 1px solid #7c2430;
+  border-top: 1px solid #5f1b27;
+  border-bottom: 1px solid #5f1b27;
   background: transparent;
 }
 
 .link-ember {
-  color: #7c2430;
+  color: #5f1b27;
   text-decoration: none;
   box-shadow: inset 0 -1px 0 currentColor;
 }
 
 .link-ember:hover {
-  color: #5c1a24;
+  color: #46131d;
 }
 
 .prose-content h2 {
-  color: #2c261f;
+  color: #3c3438;
   font-family: var(--font-display), Georgia, serif;
   font-size: 1.5rem;
   font-weight: 600;
@@ -106,7 +156,7 @@ section {
 }
 
 .prose-content h3 {
-  color: #2c261f;
+  color: #3c3438;
   font-family: var(--font-display), Georgia, serif;
   font-size: 1.25rem;
   font-weight: 600;
@@ -117,14 +167,14 @@ section {
 .prose-content p {
   margin-bottom: 1rem;
   line-height: 1.75;
-  color: #5c5348;
+  color: #4a4246;
 }
 
 .prose-content ul,
 .prose-content ol {
   margin-bottom: 1rem;
   padding-left: 1.5rem;
-  color: #5c5348;
+  color: #4a4246;
 }
 
 .prose-content li {
@@ -133,17 +183,17 @@ section {
 }
 
 .prose-content a {
-  color: #7c2430;
+  color: #5f1b27;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
 
 .prose-content a:hover {
-  color: #5c1a24;
+  color: #46131d;
 }
 
 .prose-content strong {
-  color: #2c261f;
+  color: #3c3438;
   font-weight: 600;
 }
 
@@ -152,9 +202,9 @@ section {
 }
 
 .hang-toc {
-  background: #f6efe0;
-  border: 1px solid #c9bba4;
-  box-shadow: 8px 10px 0 rgba(44, 38, 31, 0.08);
+  background: #f8f7f7;
+  border: 1px solid #d7d1d3;
+  box-shadow: 8px 10px 0 rgba(60, 52, 56, 0.08);
 }
 
 @keyframes slideUp {

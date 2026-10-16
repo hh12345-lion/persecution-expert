@@ -5,11 +5,8 @@ import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
-import { guides, getGuide } from "@/data/guides";
-
-export function generateStaticParams() {
-  return guides.map((g) => ({ slug: g.slug }));
-}
+import { getGuide } from "@/data/guides";
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -36,16 +33,16 @@ export default async function GuidePage({ params }: { params: Promise<{ slug: st
           path,
         })}
       />
-      <PageShell title={guide.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(`/guides/${slug}`)} title={guide.h1} breadcrumbs={crumbs}>
         {guide.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
+          <p key={i} className="mb-4 text-[#4a4246] leading-relaxed">
             {p}
           </p>
         ))}
         <FAQSection faqs={guide.faqs} />
         <Link
           href="/contact"
-          className="mt-8 inline-flex min-h-[44px] items-center rounded-[4px] bg-[#7c2430] px-6 py-3 font-semibold text-white hover:bg-[#5c1a24]"
+          className="mt-8 inline-flex min-h-[44px] items-center rounded-[4px] bg-[#5f1b27] px-6 py-3 font-semibold text-white hover:bg-[#46131d]"
         >
           Contact Us
         </Link>

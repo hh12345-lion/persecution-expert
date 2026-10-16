@@ -8,18 +8,14 @@ export default function NotFound() {
   return (
     <>
       <section className="mx-auto max-w-2xl px-4 py-14 text-center sm:px-6 sm:py-16">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-slate">Persecution Expert</p>
-        <p className="mt-4 font-display text-6xl text-ember sm:text-7xl" aria-hidden="true">
-          404
-        </p>
-        <h1 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Page not found</h1>
+        <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Page not found</h1>
         <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-body">
           That page is not in this folio. Use the links below for UK persecution expert witness guidance.
         </p>
         <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <Link
             href="/"
-            className="inline-flex min-h-[44px] items-center justify-center bg-ember px-8 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full rounded-br-none bg-ember px-8 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
           >
             Home
           </Link>

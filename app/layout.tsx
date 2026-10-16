@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Karla, Source_Serif_4 } from "next/font/google";
+import localFont from "next/font/local";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { CookieConsentProvider } from "@/components/cookies";
@@ -9,19 +9,31 @@ import { isProductionSite } from "@/lib/seo/is-production";
 import { normalizeSeoDescription, normalizeSeoTitle } from "@/lib/seo/meta-limits";
 import "./globals.css";
 
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  variable: "--font-source-serif",
+// Self-hosted latin subsets of the brand typefaces: Archivo for headings, Spectral for body text.
+const archivo = localFont({
+  src: [
+    { path: "./fonts/archivo.woff2", weight: "100 900", style: "normal" },
+    { path: "./fonts/archivo-italic.woff2", weight: "100 900", style: "italic" },
+  ],
+  variable: "--font-archivo",
   display: "swap",
 });
 
-const karla = Karla({
-  subsets: ["latin"],
-  variable: "--font-karla",
+const spectral = localFont({
+  src: [
+    { path: "./fonts/spectral.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/spectral-italic.woff2", weight: "400", style: "italic" },
+    { path: "./fonts/spectral-600.woff2", weight: "600", style: "normal" },
+  ],
+  variable: "--font-spectral",
   display: "swap",
 });
+
+// Every page is rendered on the server for each request.
+export const dynamic = "force-dynamic";
 
 export const viewport = {
+  themeColor: "#5F1B27",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -50,14 +62,18 @@ export const metadata: Metadata = {
     },
   },
   robots: isProductionSite() ? { index: true, follow: true } : { index: false, follow: false },
-  icons: {
-    icon: [{ url: "/icon.svg", type: "image/svg+xml" }],
+  openGraph: {
+    type: "website",
+    locale: "en_GB",
+    siteName: "Persecution Expert",
+    images: [{ url: "/brand/og.png", width: 1200, height: 630, alt: "Persecution Expert" }],
   },
+  twitter: { card: "summary_large_image", images: ["/brand/og.png"] },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${sourceSerif.variable} ${karla.variable} h-full`}>
+    <html lang="en-GB" className={`${archivo.variable} ${spectral.variable} h-full`}>
       <body className="flex min-h-full min-w-0 flex-col overflow-x-hidden font-sans antialiased">
         <ConsentDefaultsScript />
         <CookieConsentProvider>

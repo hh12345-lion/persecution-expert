@@ -4,16 +4,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { CTASection } from "@/components/ui/CTASection";
-import { getBlogBySlug, getBlogSlugs } from "@/lib/blog";
+import { getBlogBySlug } from "@/lib/blog";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 import { markdownToHtml } from "@/lib/markdown";
 import { createMetadata } from "@/lib/metadata";
 
 type Props = { params: Promise<{ slug: string }> };
-
-export function generateStaticParams() {
-  return getBlogSlugs().map((slug) => ({ slug }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -132,7 +128,7 @@ export default async function BlogPostPage({ params }: Props) {
 
         <p className="not-prose mt-12 border-t border-rule pt-8 text-sm">
           <Link href="/blog" className="font-semibold text-ember hover:text-ember-deep">
-            ← Back to the blog
+            Back to the blog
           </Link>
           <span className="mx-3 text-body/40">·</span>
           <Link href="/how-to-instruct" className="font-semibold text-ember hover:text-ember-deep">

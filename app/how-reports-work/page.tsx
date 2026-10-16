@@ -4,6 +4,7 @@ import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { articleSchema } from "@/lib/schema";
+import { photoFor } from "@/lib/page-photos";
 
 const PAGE_DESCRIPTION =
   "How persecution expert reports work: expert duties, report structure, going beyond the CPIN, Legal Aid compatibility, and timeline from instruction to report for UK immigration tribunals.";
@@ -31,20 +32,21 @@ export default function HowReportsWorkPage() {
         })}
       />
       <PageShell
+        photo={photoFor("/how-reports-work")}
         title="How Persecution Expert Reports Work: Standards, Structure and Process"
         subtitle="Expert duties, report contents, CPIN analysis, Legal Aid compatibility, and the instruction timeline for UK immigration tribunals."
         breadcrumbs={crumbs}
       >
-        <h2 className="text-2xl font-bold text-[#2c261f]">The Expert&apos;s Duties</h2>
-        <p className="mt-4 mb-4 text-[#5c5348] leading-relaxed">
+        <h2 className="text-2xl font-bold text-[#3c3438]">The Expert&apos;s Duties</h2>
+        <p className="mt-4 mb-4 text-[#4a4246] leading-relaxed">
           Expert witnesses in immigration proceedings are required to maintain impartiality. Their evidence is intended to
           assist the tribunal in reaching a fair and informed decision. Responsibilities include providing opinion on risk
           assessment and country conditions, and preparing comprehensive expert reports compliant with Immigration Tribunal
           guidance including Practice Direction paragraph 10 (2023) and the Adam Pipe October 2025 guide.
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#2c261f]">What a Persecution Report Contains</h2>
-        <ol className="mt-4 list-decimal space-y-3 pl-6 text-[#5c5348] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#3c3438]">What a Persecution Report Contains</h2>
+        <ol className="mt-4 list-decimal space-y-3 pl-6 text-[#4a4246] leading-relaxed">
           <li>Expert&apos;s qualifications and methodology</li>
           <li>Sources used (CPINs, UNHCR reports, NGO reports, field research, tribunal decisions)</li>
           <li>Country conditions relevant to the specific profile</li>
@@ -54,38 +56,38 @@ export default function HowReportsWorkPage() {
           <li>Statement of truth</li>
         </ol>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#2c261f]">Going Beyond the CPIN</h2>
-        <p className="mt-4 mb-4 text-[#5c5348] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#3c3438]">Going Beyond the CPIN</h2>
+        <p className="mt-4 mb-4 text-[#4a4246] leading-relaxed">
           In many cases solicitors and advocates instruct an expert witness to provide specialist evidence. Experts research
           issues such as political instability, human rights abuses, discrimination, or specific targeting of a group.
         </p>
-        <p className="mb-4 text-[#5c5348] leading-relaxed">
+        <p className="mb-4 text-[#4a4246] leading-relaxed">
           The expert&apos;s role is not to reproduce the CPIN but to provide independent analysis that may go beyond it,
           particularly where: the CPIN does not address the specific profile; country conditions have changed since the
           CPIN was published; or the individual facts require analysis the CPIN cannot provide.
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#2c261f]">Legal Aid Compatibility</h2>
-        <p className="mt-4 mb-4 text-[#5c5348] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#3c3438]">Legal Aid Compatibility</h2>
+        <p className="mt-4 mb-4 text-[#4a4246] leading-relaxed">
           Persecution expert reports are commonly instructed under Legal Aid. Solicitors should obtain LAA prior authority
           before the expert begins work. Indicative fees are available on request for prior authority applications. See our{" "}
-          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+          <Link href="/how-to-instruct" className="text-[#5f1b27] hover:underline">
             how to instruct
           </Link>{" "}
           for Legal Aid rates and privately funded options.
         </p>
 
-        <h2 className="mt-10 text-2xl font-bold text-[#2c261f]">Timeline from Instruction to Report</h2>
-        <p className="mt-4 mb-4 text-[#5c5348] leading-relaxed">
+        <h2 className="mt-10 text-2xl font-bold text-[#3c3438]">Timeline from Instruction to Report</h2>
+        <p className="mt-4 mb-4 text-[#4a4246] leading-relaxed">
           Standard persecution expert reports typically take 2 to 3 weeks from receipt of the letter of instruction and
           relevant documents. The timeline includes: initial case review and scoping (1 to 2 business days), research and
           analysis (1 to 2 weeks), report drafting and quality review (3 to 5 business days), and delivery to the
           instructing solicitor.
         </p>
-        <p className="text-[#5c5348] leading-relaxed">
+        <p className="text-[#4a4246] leading-relaxed">
           Urgent instructions are available for imminent tribunal hearings subject to expert availability. For the full
           instruction process, see{" "}
-          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+          <Link href="/how-to-instruct" className="text-[#5f1b27] hover:underline">
             how to instruct a persecution expert
           </Link>
           .

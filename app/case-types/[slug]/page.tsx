@@ -4,12 +4,9 @@ import { PageShell } from "@/components/layout/PageShell";
 import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
-import { caseTypes, getCaseType } from "@/data/case-types";
+import { getCaseType } from "@/data/case-types";
 import { getPersecutionType } from "@/data/persecution-types";
-
-export function generateStaticParams() {
-  return caseTypes.map((c) => ({ slug: c.slug }));
-}
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -36,20 +33,20 @@ export default async function CaseTypePage({ params }: { params: Promise<{ slug:
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={caseType.faqs} />
-      <PageShell title={caseType.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(`/case-types/${slug}`)} title={caseType.h1} breadcrumbs={crumbs}>
         {caseType.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
+          <p key={i} className="mb-4 text-[#4a4246] leading-relaxed">
             {p}
           </p>
         ))}
 
-        <h2 className="mt-8 text-xl font-bold text-[#2c261f]">Related Persecution Types</h2>
+        <h2 className="mt-8 text-xl font-bold text-[#3c3438]">Related Persecution Types</h2>
         <ul className="mt-4 space-y-2">
           {caseType.relatedPersecutionTypes.map((s) => {
             const pt = getPersecutionType(s);
             return (
               <li key={s}>
-                <Link href={`/persecution-types/${s}`} className="text-[#7c2430] hover:underline">
+                <Link href={`/persecution-types/${s}`} className="text-[#5f1b27] hover:underline">
                   {pt?.title ?? s}
                 </Link>
               </li>
@@ -60,13 +57,13 @@ export default async function CaseTypePage({ params }: { params: Promise<{ slug:
         <FAQSection faqs={caseType.faqs} />
 
         <div className="mt-8 flex flex-wrap gap-4 text-sm">
-          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+          <Link href="/how-to-instruct" className="text-[#5f1b27] hover:underline">
             How to refer
           </Link>
-          <Link href="/how-reports-work" className="text-[#7c2430] hover:underline">
+          <Link href="/how-reports-work" className="text-[#5f1b27] hover:underline">
             How reports work
           </Link>
-          <Link href="/country-experts" className="text-[#7c2430] hover:underline">
+          <Link href="/country-experts" className="text-[#5f1b27] hover:underline">
             Country experts
           </Link>
         </div>

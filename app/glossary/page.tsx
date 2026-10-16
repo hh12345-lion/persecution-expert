@@ -4,6 +4,7 @@ import { GlossarySearch } from "@/components/glossary/GlossarySearch";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { glossaryTerms } from "@/data/glossary";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Persecution Expert Glossary | Key Asylum Law Terms UK",
@@ -23,6 +24,7 @@ export default function GlossaryPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={faqItems} />
       <PageShell
+        photo={photoFor("/glossary")}
         title="Persecution Expert & Asylum Law Glossary"
         subtitle="35 definition-first terms for UK immigration practitioners."
         breadcrumbs={crumbs}

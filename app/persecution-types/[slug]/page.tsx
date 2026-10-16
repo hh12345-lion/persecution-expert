@@ -4,12 +4,9 @@ import { PageShell } from "@/components/layout/PageShell";
 import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
-import { persecutionTypes, getPersecutionType } from "@/data/persecution-types";
+import { getPersecutionType } from "@/data/persecution-types";
 import { getCaseType } from "@/data/case-types";
-
-export function generateStaticParams() {
-  return persecutionTypes.map((p) => ({ slug: p.slug }));
-}
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -36,20 +33,20 @@ export default async function PersecutionTypePage({ params }: { params: Promise<
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={type.faqs} />
-      <PageShell title={type.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(`/persecution-types/${slug}`)} title={type.h1} breadcrumbs={crumbs}>
         {type.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
+          <p key={i} className="mb-4 text-[#4a4246] leading-relaxed">
             {p}
           </p>
         ))}
 
-        <h2 className="mt-8 text-xl font-bold text-[#2c261f]">Related Case Types</h2>
+        <h2 className="mt-8 text-xl font-bold text-[#3c3438]">Related Case Types</h2>
         <ul className="mt-4 space-y-2">
           {type.relatedCaseTypes.map((s) => {
             const ct = getCaseType(s);
             return (
               <li key={s}>
-                <Link href={`/case-types/${s}`} className="text-[#7c2430] hover:underline">
+                <Link href={`/case-types/${s}`} className="text-[#5f1b27] hover:underline">
                   {ct?.title ?? s}
                 </Link>
               </li>
@@ -60,13 +57,13 @@ export default async function PersecutionTypePage({ params }: { params: Promise<
         <FAQSection faqs={type.faqs} />
 
         <div className="mt-8 flex flex-wrap gap-4 text-sm">
-          <Link href="/persecution-grounds" className="text-[#7c2430] hover:underline">
+          <Link href="/persecution-grounds" className="text-[#5f1b27] hover:underline">
             Persecution grounds
           </Link>
-          <Link href="/how-reports-work" className="text-[#7c2430] hover:underline">
+          <Link href="/how-reports-work" className="text-[#5f1b27] hover:underline">
             How reports work
           </Link>
-          <Link href="/how-to-instruct" className="text-[#7c2430] hover:underline">
+          <Link href="/how-to-instruct" className="text-[#5f1b27] hover:underline">
             How to refer
           </Link>
         </div>

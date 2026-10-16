@@ -4,6 +4,7 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { guides } from "@/data/guides";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Persecution Expert Solicitor Guides | Asylum Law Resources UK",
@@ -19,11 +20,12 @@ export default function GuidesPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell
+        photo={photoFor("/guides")}
         title="Solicitor Guides: Persecution Expert Evidence"
         subtitle="Practical guides for UK immigration solicitors instructing persecution expert witnesses."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#5c5348] leading-relaxed">
+        <p className="mb-8 text-[#4a4246] leading-relaxed">
           These guides cover persecution grounds analysis, state protection methodology, internal relocation, and the
           instruction process for Legal Aid and privately funded cases. All guides align with Immigration Tribunal
           Practice Direction paragraph 10 and the Adam Pipe October 2025 guide.
@@ -35,9 +37,9 @@ export default function GuidesPage() {
             href: `/guides/${g.slug}`,
           }))}
         />
-        <p className="mt-8 text-[#5c5348]">
+        <p className="mt-8 text-[#4a4246]">
           For a comprehensive overview, see our{" "}
-          <Link href="/persecution-grounds" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/persecution-grounds" className="font-semibold text-[#5f1b27] hover:underline">
             persecution grounds pillar page
           </Link>
           .

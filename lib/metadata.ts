@@ -3,10 +3,10 @@ import { SITE_URL } from "./constants";
 import { isProductionSite } from "./seo/is-production";
 import { normalizeSeoDescription, normalizeSeoTitle } from "./seo/meta-limits";
 
-const OG_IMAGE_ALT = "Persecution Expert - Persecution Expert Witness UK";
+const OG_IMAGE_ALT = "Persecution Expert, persecution expert witness UK";
 
 export const OPEN_GRAPH_IMAGE = {
-  url: `${SITE_URL}/opengraph-image`,
+  url: `${SITE_URL}/brand/og.png`,
   width: 1200,
   height: 630,
   alt: OG_IMAGE_ALT,

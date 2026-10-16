@@ -3,7 +3,7 @@ import { createMetadata } from "@/lib/metadata";
 
 export const metadata = createMetadata({
   title: "Thank You | Persecution Expert",
-  description: "Your case referral has been received. We will respond within one business day.",
+  description: "Your case referral has been received. We will be in touch about the next steps.",
   path: "/thank-you",
   noindex: true,
   follow: false,
@@ -15,7 +15,7 @@ const steps = [
     body: "We match a persecution expert to your Convention ground, country profile, and hearing timeline.",
   },
   {
-    title: "Reply within one business day",
+    title: "We reply with next steps",
     body: "You receive proposed scope, availability, and indicative fees where applicable.",
   },
   {
@@ -28,15 +28,14 @@ export default function ThankYouPage() {
   return (
     <>
       <section className="mx-auto max-w-xl px-4 py-14 sm:px-6 sm:py-16">
-        <p className="text-[11px] uppercase tracking-[0.2em] text-slate">Received</p>
-        <h1 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Thank you</h1>
+        <h1 className="font-display text-3xl font-semibold text-ink sm:text-4xl">Thank you</h1>
         <p className="mt-4 text-base leading-relaxed text-body">
-          Your case note is with us. Expect a reply within one business day. Flag urgent hearing dates in any follow-up.
+          Your case note is with us. We will be in touch about the next steps. Flag urgent hearing dates in any follow-up.
         </p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row">
           <Link
             href="/"
-            className="inline-flex min-h-[44px] items-center justify-center bg-ember px-6 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
+            className="inline-flex min-h-[44px] items-center justify-center rounded-full rounded-br-none bg-ember px-6 py-3 text-sm font-semibold text-white hover:bg-ember-deep"
           >
             Home
           </Link>

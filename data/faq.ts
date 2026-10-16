@@ -59,6 +59,6 @@ export const siteFaqs: FAQ[] = [
   {
     question: "How do I instruct a persecution expert through this site?",
     answer:
-      "Complete the contact form with the persecution ground, country of origin, proceedings type, and funding source. We will respond within one business day with proposed scope, timeline, and expert availability.",
+      "Complete the contact form with the persecution ground, country of origin, proceedings type, and funding source. We will come back to you with proposed scope, timeline, and expert availability.",
   },
 ];

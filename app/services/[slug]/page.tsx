@@ -3,11 +3,8 @@ import { PageShell } from "@/components/layout/PageShell";
 import { FAQSection } from "@/components/ui/FAQSection";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
-import { services, getService } from "@/data/services";
-
-export function generateStaticParams() {
-  return services.map((s) => ({ slug: s.id }));
-}
+import { getService } from "@/data/services";
+import { photoFor } from "@/lib/page-photos";
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -34,9 +31,9 @@ export default async function ServicePage({ params }: { params: Promise<{ slug: 
   return (
     <>
       <PageJsonLd breadcrumbs={crumbs} faqs={service.faqs} />
-      <PageShell title={service.h1} breadcrumbs={crumbs}>
+      <PageShell photo={photoFor(`/services/${slug}`)} title={service.h1} breadcrumbs={crumbs}>
         {service.content.map((p, i) => (
-          <p key={i} className="mb-4 text-[#5c5348] leading-relaxed">
+          <p key={i} className="mb-4 text-[#4a4246] leading-relaxed">
             {p}
           </p>
         ))}

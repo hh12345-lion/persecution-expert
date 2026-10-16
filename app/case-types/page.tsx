@@ -4,6 +4,7 @@ import { CardGrid } from "@/components/ui/CardGrid";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
 import { caseTypes } from "@/data/case-types";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Asylum Case Types | Persecution Expert Witness UK",
@@ -19,11 +20,12 @@ export default function CaseTypesPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell
+        photo={photoFor("/case-types")}
         title="Asylum Case Types"
         subtitle="Persecution expert witness evidence for all major UK immigration tribunal proceedings."
         breadcrumbs={crumbs}
       >
-        <p className="mb-8 text-[#5c5348] leading-relaxed">
+        <p className="mb-8 text-[#4a4246] leading-relaxed">
           Persecution Expert provides qualified expert reports for First-tier Tribunal appeals, Upper Tribunal country
           guidance cases, deportation and Article 3 claims, fresh claims, LGBTQ+ asylum, gender-based violence, political
           persecution, and religious persecution proceedings.
@@ -35,9 +37,9 @@ export default function CaseTypesPage() {
             href: `/case-types/${c.slug}`,
           }))}
         />
-        <p className="mt-8 text-[#5c5348]">
+        <p className="mt-8 text-[#4a4246]">
           See also our{" "}
-          <Link href="/persecution-types" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/persecution-types" className="font-semibold text-[#5f1b27] hover:underline">
             persecution types hub
           </Link>{" "}
           for persecution ground-specific expert evidence pages.

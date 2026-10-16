@@ -3,6 +3,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { CardGrid } from "@/components/ui/CardGrid";
 import { createMetadata } from "@/lib/metadata";
 import { persecutionTypes } from "@/data/persecution-types";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Persecution Types | Expert Witness Reports for UK Asylum Tribunals",
@@ -19,15 +20,16 @@ export default function PersecutionTypesPage() {
 
   return (
     <PageShell
+        photo={photoFor("/persecution-types")}
       title="Persecution Types"
       subtitle="Thematic persecution analysis covering all Refugee Convention grounds and legal frameworks applicable across all countries."
       breadcrumbs={crumbs}
     >
-      <p className="mb-8 text-[#5c5348] leading-relaxed">
+      <p className="mb-8 text-[#4a4246] leading-relaxed">
         Persecution experts provide the overarching legal and analytical framework for asylum claims. Unlike country-specific
         experts who focus on conditions in a single jurisdiction, persecution type analysis applies persecution methodology
         to any country of origin. Select a persecution type below or read the complete{" "}
-        <Link href="/persecution-grounds" className="text-[#7c2430] hover:underline">
+        <Link href="/persecution-grounds" className="text-[#5f1b27] hover:underline">
           persecution grounds guide
         </Link>
         .

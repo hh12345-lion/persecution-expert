@@ -2,6 +2,7 @@ import Link from "next/link";
 import { PageShell } from "@/components/layout/PageShell";
 import { PageJsonLd } from "@/components/seo/PageJsonLd";
 import { createMetadata } from "@/lib/metadata";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "How to Instruct a Persecution Expert Witness | UK Solicitors Guide",
@@ -48,39 +49,40 @@ export default function HowToInstructPage() {
     <>
       <PageJsonLd breadcrumbs={crumbs} />
       <PageShell
+        photo={photoFor("/how-to-instruct")}
         title="How to Instruct a Persecution Expert Witness"
         subtitle="A step-by-step guide for UK immigration solicitors, barristers, and Legal Aid practitioners."
         breadcrumbs={crumbs}
       >
         {sections.map((section, i) => (
           <div key={i} className="mb-8">
-            <h2 className="text-xl font-bold text-[#2c261f]">{section.title}</h2>
-            <p className="mt-3 text-[#5c5348] leading-relaxed">{section.body}</p>
+            <h2 className="text-xl font-bold text-[#3c3438]">{section.title}</h2>
+            <p className="mt-3 text-[#4a4246] leading-relaxed">{section.body}</p>
           </div>
         ))}
 
-        <p className="text-[#5c5348] leading-relaxed">
+        <p className="text-[#4a4246] leading-relaxed">
           Ready to refer a case?{" "}
-          <Link href="/contact" className="text-[#7c2430] hover:underline">
+          <Link href="/contact" className="text-[#5f1b27] hover:underline">
             Send a case note
           </Link>{" "}
           or read our{" "}
-          <Link href="/guides/expert-report-standards-guide" className="text-[#7c2430] hover:underline">
+          <Link href="/guides/expert-report-standards-guide" className="text-[#5f1b27] hover:underline">
             expert report standards guide
           </Link>
           .
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/persecution-grounds" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/persecution-grounds" className="font-semibold text-[#5f1b27] hover:underline">
             Persecution grounds guide
           </Link>
-          <Link href="/how-reports-work" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/how-reports-work" className="font-semibold text-[#5f1b27] hover:underline">
             How reports work
           </Link>
-          <Link href="/country-experts" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/country-experts" className="font-semibold text-[#5f1b27] hover:underline">
             Country expert network
           </Link>
-          <Link href="/guides" className="font-semibold text-[#7c2430] hover:underline">
+          <Link href="/guides" className="font-semibold text-[#5f1b27] hover:underline">
             Solicitor guides
           </Link>
         </div>

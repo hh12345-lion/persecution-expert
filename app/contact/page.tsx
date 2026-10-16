@@ -2,11 +2,12 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ContactForm } from "@/components/forms/ContactForm";
 import { createMetadata } from "@/lib/metadata";
 import { SITE_EMAIL, SITE_UK_SCOPE } from "@/lib/constants";
+import { photoFor } from "@/lib/page-photos";
 
 export const metadata = createMetadata({
   title: "Refer a Persecution Expert Witness | Persecution Expert UK",
   description:
-    "Refer a UK asylum or immigration tribunal matter for a qualified persecution expert witness. Legal Aid compatible. Response within one business day.",
+    "Refer a UK asylum or immigration tribunal matter for a qualified persecution expert witness. Legal Aid compatible. UK tribunal matters only.",
   path: "/contact",
   noindex: true,
 });
@@ -14,8 +15,9 @@ export const metadata = createMetadata({
 export default function ContactPage() {
   return (
     <PageShell
+        photo={photoFor("/contact")}
       title="Refer a case"
-      subtitle="Four fields. One business day response. UK tribunal matters only."
+      subtitle="Four fields. UK tribunal matters only."
       breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
     >
       <div className="mx-auto grid min-w-0 max-w-xl gap-10">
